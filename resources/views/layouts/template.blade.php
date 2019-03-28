@@ -56,17 +56,17 @@
 			<ul class="sidenav__menu" role="menubar">
 				<!-- Categories -->
 				<li>
-					<a href="index.html" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--orange">Beranda</a>
+					<a href="{{ route('index') }}" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--orange">Beranda</a>
 				</li>
 				<li>
-					<a href="about.html" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--blue">Tentang Kami </a>
+					<a href="{{ route('about') }}" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--blue">Tentang Kami </a>
 				</li>
 				<li>
-					<a href="search-results.html" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--salad">Post</a>
+					<a href="{{ route('daftarpost') }}" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--salad">Post</a>
 				</li>
 
 				<li>
-					<a href="categories.html" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--light-blue">Kategori</a>
+					<a href="{{ route('categori') }}" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--light-blue">Kategori</a>
 				</li>
 
       <!--   <li>
@@ -120,19 +120,19 @@
 						<ul class="nav__menu">
 
 							<li class="active">
-								<a href="index.html">Beranda</a>
+								<a href="{{ route('/') }}">Beranda</a>
 							</li>
 
 							<li>
-								<a href="about.html">Tentang Kami</a>
+								<a href="{{ route('about') }}">Tentang Kami</a>
 							</li>
 
 							<li>
-								<a href="search-results.html">Post</a>
+								<a href="{{ route('daftarpost') }}">Post</a>
 							</li>
 
 							<li>
-								<a href="categories.html">Kategori</a>
+								<a href="{{ route('categori') }}">Kategori</a>
 							</li>
 <!-- 
                 <li class="nav__dropdown">
