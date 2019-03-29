@@ -56,7 +56,7 @@
 			<ul class="sidenav__menu" role="menubar">
 				<!-- Categories -->
 				<li>
-					<a href="{{ route('index') }}" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--orange">Beranda</a>
+					<a href="{{ route('/') }}" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--orange">Beranda</a>
 				</li>
 				<li>
 					<a href="{{ route('about') }}" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--blue">Tentang Kami </a>
