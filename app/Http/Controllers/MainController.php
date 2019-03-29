@@ -113,5 +113,9 @@ public function categori(){
     return view('categori');
 }
 
+public function kontak(){
+    return view('kontak');
+}
+
 
 }

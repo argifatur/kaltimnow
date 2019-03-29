@@ -1,41 +1,6 @@
 @extends('layouts.template')
 @section('content')
 <!-- Search -->
-<div class="nav__right-item nav__search">
-  <a href="#" class="nav__search-trigger" id="nav__search-trigger">
-    <i class="ui-search nav__search-trigger-icon"></i>
-  </a>
-  <div class="nav__search-box" id="nav__search-box">
-    <form class="nav__search-form">
-      <input type="text" placeholder="Search an article" class="nav__search-input">
-      <button type="submit" class="search-button btn btn-lg btn-color btn-button">
-        <i class="ui-search nav__search-icon"></i>
-      </button>
-    </form>
-  </div>
-
-<!-- Header -->
-<div class="header">
-  <div class="container">
-    <div class="flex-parent align-items-center">
-
-      <!-- Logo -->
-      <a href="index.html" class="logo d-none d-lg-block">
-        <img class="logo__img" src="img/logo.png" srcset="img/logo.png, img/logo.png" alt="logo">
-      </a>
-
-      <!-- Ad Banner 728 -->
-      <div class="text-center">
-        <a href="#">
-          <img src="img/banner.gif" alt="">
-        </a>
-      </div>
-
-    </div>
-  </div>
-</div> <!-- end header -->
-
-
 <div class="main-container container" id="main-container">
 
   <!-- Content -->
@@ -166,11 +131,8 @@
         <a href="#" class="pagination__page">4</a>
         <a href="#" class="pagination__page pagination__icon pagination__page--next"><i class="ui-arrow-right"></i></a>
       </nav>
-
     </div> <!-- end col -->
-
-@include('layouts.sidebar')
-      
-    </div> <!-- end content -->
-  </div> <!-- end main container -->
+    @include('layouts.sidebar')
+  </div>
+</div>
 @endsection
