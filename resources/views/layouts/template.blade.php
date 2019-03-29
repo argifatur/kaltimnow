@@ -176,7 +176,7 @@
       		<a class="social social-youtube social--nobase" href="#" title="youtube" target="_blank" aria-label="youtube">
       			<i class="ui-youtube"></i>
       		</a>
-      		<a class="social social-instagram social--nobase" href="#" title="instagram" target="_blank" aria-label="instagram">
+      		<a class="social social-instagram social--nobase" href="#" title="instagasdram" target="_blank" aria-label="instagram">
       			<i class="ui-instagram"></i>
       		</a>
       	</div>
