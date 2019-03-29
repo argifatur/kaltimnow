@@ -17,7 +17,7 @@ Route::get('/', function () {
 */
 
 Auth::routes();
-Route::get('/home',  'HomeController@index')->name('index');
+Route::get('/adminpanel',  'HomeController@index')->name('index');
 Route::get('/',      'MainController@index')->name('/');
 Route::get('/berita/{path}',  'MainController@showBerita')->name('berita');
 Route::post('/cari',		  'MainController@cari')->name('cari');
@@ -30,11 +30,14 @@ Route::get('/kontak',		  'MainController@kontak')->name('kontak');
 /* -------------- Admin -----------*/
 
 Route::get('/tambah',         'AdminController@tambah')->name('tambah');
+Route::get('/banner',         'AdminController@banner')->name('banner');
 Route::get('/logout',         'AdminController@logout')->name('logout');
 Route::get('/tambah_artik',         'AdminController@tambah_artik')->name('tambah_artik');
 Route::get('/tambah_kat',         'AdminController@tambah_kat')->name('tambah_kat');
 Route::get('/tambah_tag',         'AdminController@tambah_tag')->name('tambah_tag');
+Route::get('/tambah_banner',         'AdminController@tambah_banner')->name('tambah_banner');
 Route::post('/addPost',       'AdminController@addPost')->name('addpost');
+Route::post('/addBanner',       'AdminController@addBanner')->name('addbanner');
 Route::post('/addKat',       'AdminController@addKat')->name('addkat');
 Route::post('/addTag',       'AdminController@addTag')->name('addtag');
 Route::post('/editPost/{id}', 'AdminController@editPost')->name('editpost');

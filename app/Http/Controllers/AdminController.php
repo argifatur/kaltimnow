@@ -42,6 +42,9 @@ class AdminController extends Controller
     public function tambah_tag(){
         return view('admin.tambah_tag');
     }
+    public function tambah_banner(){
+        return view('admin.tambah_banner');
+    }
 
 
 
@@ -79,6 +82,41 @@ class AdminController extends Controller
         $berita->save();
         return redirect("/daftar")->with('msg', 'Berhasil Menambahkan Artikel!');
     }
+
+    public function addBanner(Request $request){
+                $banner = DB::table('banner')->get();
+
+
+        $this->validate($request, [
+            'judul' => 'required'
+        ]);
+
+        $path     = str_replace("?", "", $request->judul);
+        $path     = explode(" ", $path);
+        $path     = implode("-", $path);
+
+        $banner = new Banner;
+        $banner->judul    = $request->judul;
+        $banner->path     = $path;
+
+        if($request->file('foto') != "") {
+            $file         = $request->file('foto');
+            $fileName     = $file->getClientOriginalName();
+            $dt           = new DateTime();
+            $time         = $dt->format('Y_m_d_H_i_s_');
+            $fileNameNew  = $time.$fileName;
+            $request->file('foto')->move("public/img/", $fileNameNew);
+
+            $banner->foto = $fileNameNew;
+        } 
+
+        $banner->save();
+        return redirect("/daftar")->with('msg', 'Berhasil Menambahkan Artikel!');
+    }
+
+
+  
+
 
     public function addKat(Request $request){
         $kategori = new Kategori;
@@ -156,6 +194,8 @@ class AdminController extends Controller
         return view('admin.daftar', ['beritas' => $beritas, 'controller' => $this]);
     }    
 
+  
+
     public function daftar_kat(){
         $kategori = DB::table('kategori')->get();
         $kategori = Kategori::paginate(3);
@@ -163,6 +203,13 @@ class AdminController extends Controller
 
 // mengirim data pegawai ke view tag
         return view('admin.daftar_kat',['kategori' => $kategori]);
+    }    
+
+    public function banner(){
+        $banner = DB::table('banner')->get();
+
+// mengirim data pegawai ke view tag
+        return view('admin.banner',['banner' => $banner]);
     }     
 
     public function daftar_tag(){
