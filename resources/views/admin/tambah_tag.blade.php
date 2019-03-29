@@ -27,7 +27,7 @@
                   <input type="text" class="form-control input-main" name="count" placeholder="" value="{{ old('count') }}" required autofocus> 
                 </div>  -->
               </div>
-              <input class="col-12 submit-main" type="submit" value="Tambah Tag">
+              <input class="submit-main" type="submit" value="Tambah Tag">
             </form> 
           </div>
         </div>

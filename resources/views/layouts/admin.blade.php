@@ -4,12 +4,12 @@
 <head>
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Admin KaltimNo</title>
+ <title>Admin KaltimNow</title>
  <link rel="shortcut icon" href="{{asset('public/img/ikon.png') }}"> 
-  <link rel="stylesheet" type="text/css" href="{{ asset('public/css/rewidify.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/plugins/bootstrap/css/bootstrap.css') }}">
- <link rel="stylesheet" type="text/css" href="{{ asset('public/css/style.css') }}">
-<link href="{{asset('public/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('public/admin/css/rewidify.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('public/admin/assets/plugins/bootstrap/css/bootstrap.css') }}">
+ <link rel="stylesheet" type="text/css" href="{{ asset('public/admin/css/style.css') }}">
+<link href="{{asset('public/admin/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="{{asset('public/sbadmin/css/sb-admin-2.css') }}">
 <link rel="stylesheet" type="text/css" href="{{asset('public/sbadmin/css/sb-admin-2.min.css') }}">
 
@@ -24,7 +24,7 @@
     ]); ?>
 </script>
  <script src="{{ asset('public/tinymce/tinymce.min.js') }}"></script>
- <script src="{{ asset('public/assets/plugins/bootstrap/js/bootstrap.js') }}"></script>
+ <script src="{{ asset('public/admin/assets/plugins/bootstrap/js/bootstrap.js') }}"></script>
  <script src="{{ asset('public/js/jquery3.min.js') }}"></script>
  <script src="{{ asset('public/js/script.js') }}"></script>
 

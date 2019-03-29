@@ -1,19 +1,19 @@
-<link rel="stylesheet" type="text/css" href="{{asset ('public/assets/plugins/bootstrap/css/bootstrap.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{asset('public/assets/plugins/bootstrap/css/bootstrap.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('public/assets/plugins/font-awesome/css/fontawesome.css') }}">
-<link rel="stylesheet" type="text/css" href="{{asset('public/assets/plugins/font-awesome/css/fontawesome.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{asset ('public/admin/assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{asset('public/admin/assets/plugins/bootstrap/css/bootstrap.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('public/admin/assets/plugins/font-awesome/css/fontawesome.css') }}">
+<link rel="stylesheet" type="text/css" href="{{asset('public/admin/assets/plugins/font-awesome/css/fontawesome.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{asset('public/sbadmin/vendor/fontawesome-free/css/all.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{asset('public/sbadmin/css/sb-admin-2.css') }}">
 <link rel="stylesheet" type="text/css" href="{{asset('public/sbadmin/css/sb-admin-2.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{asset('public/assets/css/style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{asset('public/admin/assets/css/style.css') }}">
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
 
 <!-- JS -->
-<script src="{{asset('public/assets/plugins/jquery/jquery-3.3.1.min.js')}}"></script>
+<script src="{{asset('public/admin/assets/plugins/jquery/jquery-3.3.1.min.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-<script src="{{asset('public/assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('assets/plugins/fontawesome/js/all.js')}}"></script>
+<script src="{{asset('public/admin/assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/admin/plugins/fontawesome/js/all.js')}}"></script>
 
 <body id="page-top">
 
@@ -28,7 +28,7 @@
 				<div class="sidebar-brand-icon big">
 					<!-- <i class="fas fa-laugh-wink"></i> -->
 					<!-- <img class="img-profile" src="{{asset('public/sbadmin/img/logo-uw.png')}}"> -->
-					<img class="img-profile" src="{{asset('public/img/kaltimnow.png')}}" style="height: 45px;">
+					<img class="img-profile" src="{{asset('public/img/logo.png')}}" style="height: 45px;">
 
 				</div>
 
@@ -180,7 +180,7 @@
 <script src="{{asset('public/sbadmin/js/sb-admin-2.min.js')}}"></script>
 
 <!-- Page level plugins -->
-<script src="{{asset('public/sbadminvendor/chart.js/Chart.min.js')}}"></script>
+<script src="{{asset('public/sbadmin/vendor/chart.js/Chart.min.js')}}"></script>
 
 <!-- Page level custom scripts -->
 <script src="{{asset('public/sbadmin/js/demo/chart-area-demo.js')}}"></script>
