@@ -25,6 +25,7 @@ Route::post('/categori',		  'MainController@categori')->name('categori');
 Route::get('/post',		  'MainController@post')->name('post');
 Route::get('/about',		  'MainController@about')->name('about');
 Route::get('/daftarpost',		  'MainController@daftarpost')->name('daftarpost');
+Route::get('/kontak',		  'MainController@kontak')->name('kontak');
 
 /* -------------- Admin -----------*/
 

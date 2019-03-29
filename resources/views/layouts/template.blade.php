@@ -88,7 +88,7 @@
       </li> -->
 
       <li>
-      	<a href="contact.html" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--red">Kontak</a>
+      	<a href="{{ route('kontak') }}" class="sidenav__menu-link sidenav__menu-link-category sidenav__menu-link--red">Kontak</a>
       </li>
   </ul>
 </nav>
@@ -152,7 +152,7 @@
               </li> -->
 
               <li>
-              	<a href="contact.html">Kontak</a>
+              	<a href="{{ route('kontak') }}">Kontak</a>
               </li>
 
 
