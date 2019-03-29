@@ -21,7 +21,7 @@ Route::get('/home',  'HomeController@index')->name('index');
 Route::get('/',      'MainController@index')->name('/');
 Route::get('/berita/{path}',  'MainController@showBerita')->name('berita');
 Route::post('/cari',		  'MainController@cari')->name('cari');
-Route::post('/categori',		  'MainController@categori')->name('categori');
+Route::get('/categori',		  'MainController@categori')->name('categori');
 Route::get('/post',		  'MainController@post')->name('post');
 Route::get('/about',		  'MainController@about')->name('about');
 Route::get('/daftarpost',		  'MainController@daftarpost')->name('daftarpost');
