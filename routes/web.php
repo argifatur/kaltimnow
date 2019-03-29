@@ -17,7 +17,7 @@ Route::get('/', function () {
 */
 
 Auth::routes();
-Route::get('/home',  'HomeController@index')->name('index');
+Route::get('/adminpanel',  'HomeController@index')->name('index');
 Route::get('/',      'MainController@index')->name('/');
 Route::get('/berita/{path}',  'MainController@showBerita')->name('berita');
 Route::post('/cari',		  'MainController@cari')->name('cari');
