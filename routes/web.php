@@ -29,11 +29,14 @@ Route::get('/daftarpost',		  'MainController@daftarpost')->name('daftarpost');
 /* -------------- Admin -----------*/
 
 Route::get('/tambah',         'AdminController@tambah')->name('tambah');
+Route::get('/banner',         'AdminController@banner')->name('banner');
 Route::get('/logout',         'AdminController@logout')->name('logout');
 Route::get('/tambah_artik',         'AdminController@tambah_artik')->name('tambah_artik');
 Route::get('/tambah_kat',         'AdminController@tambah_kat')->name('tambah_kat');
 Route::get('/tambah_tag',         'AdminController@tambah_tag')->name('tambah_tag');
+Route::get('/tambah_banner',         'AdminController@tambah_banner')->name('tambah_banner');
 Route::post('/addPost',       'AdminController@addPost')->name('addpost');
+Route::post('/addBanner',       'AdminController@addBanner')->name('addbanner');
 Route::post('/addKat',       'AdminController@addKat')->name('addkat');
 Route::post('/addTag',       'AdminController@addTag')->name('addtag');
 Route::post('/editPost/{id}', 'AdminController@editPost')->name('editpost');
