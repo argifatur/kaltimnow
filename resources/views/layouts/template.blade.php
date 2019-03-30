@@ -112,7 +112,7 @@
 
 					<!-- Mobile logo -->
 					<a href="index.html" class="logo logo--mobile d-lg-none">
-						<img class="logo__img_mobile" src="{{ asset('public/img/logo.png') }}" srcset="{{ asset('img/logo.png 1x, img/logo.png 2x') }}" alt="logo">
+						<img class="logo__img_mobile" src="{{ asset('public/img/logo.png') }}"  alt="logo">
 					</a>
 
 					<!-- Nav-wrap -->

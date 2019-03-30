@@ -33,8 +33,8 @@
                   <td>{{ $banner->judul }}</td>
                   <td class="text-center"><img src="public/img/{{ $banner->foto }}" style="height: 90px; width: 728px;"></td>
                   <td><div class="btn-group">
-                    <a href="#" class="btn btn-primary" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i><br></a>
-                    <a href="#" class="btn btn-danger" href="" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"><i class="fa fa-trash"></i><br></a>
+                    <a href="{{route('edit_banner', $banner->id) }}" class="btn btn-primary" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i><br></a>
+                    <a href="hapus_banner/{{ $banner->id }}" class="btn btn-danger" href="" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"><i class="fa fa-trash"></i><br></a>
                   </div></td>
                 </tr>
               </tbody>
