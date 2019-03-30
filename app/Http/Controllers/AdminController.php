@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Berita;
+use App\Banner;
 use App\Kategori;
 use App\Tag;
 use App\User; 
@@ -111,7 +112,7 @@ class AdminController extends Controller
         } 
 
         $banner->save();
-        return redirect("/daftar")->with('msg', 'Berhasil Menambahkan Artikel!');
+        return redirect("/banner")->with('msg', 'Berhasil Menambahkan Artikel!');
     }
 
 
