@@ -25,7 +25,6 @@
                   <th>Isi</th>
                   <th>Tanggal Dibuat</th>
                   <th>Gambar</th>
-                  <th>Konten</th>
                   <th>Tindakan</th>
                 </tr>
               </thead>
@@ -37,7 +36,6 @@
                   <td>{{ $berita->path }}</td>
                   <td><?php $controller->tanggal($berita->created_at); ?></td>
                   <td><img src="public/img/{{ $berita->foto }}" style="height: 170px; width: 170px;" ></td>
-                  <td></td>
                   <td><div class="btn-group">
                     <a href="{{route('edit', $berita->id) }}" class="btn btn-primary" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i><br>Ubah</a>
                     <a href="hapus/{{ $berita->id }}" class="btn btn-danger" href="" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"><i class="fa fa-trash"></i><br>Hapus</a>

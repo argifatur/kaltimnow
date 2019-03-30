@@ -41,6 +41,7 @@ Route::post('/addBanner',       'AdminController@addBanner')->name('addbanner');
 Route::post('/addKat',       'AdminController@addKat')->name('addkat');
 Route::post('/addTag',       'AdminController@addTag')->name('addtag');
 Route::post('/editPost/{id}', 'AdminController@editPost')->name('editpost');
+Route::post('/editBanner/{id}', 'AdminController@editBanner')->name('editbanner');
 Route::post('/editKat/{id}', 'AdminController@editKat')->name('editkat');
 Route::post('/editTag/{id_tag}', 'AdminController@editTag')->name('edittag');
 Route::get('/daftar',         'AdminController@daftar')->name('daftar');
@@ -48,16 +49,18 @@ Route::get('/daftar_kat',         'AdminController@daftar_kat')->name('daftar_ka
 Route::get('/daftar_tag',         'AdminController@daftar_tag')->name('daftar_tag');
 Route::get('/dasbor',         'AdminController@dasbor')->name('dasbor');
 Route::get('/edit/{id}',      'AdminController@edit')->name('edit');
+Route::get('/edit_banner/{id}',      'AdminController@edit_banner')->name('edit_banner');
 Route::get('/edit_kat/{id}',      'AdminController@edit_kat')->name('edit_kat');
 Route::get('/edit_tag/{id_tag}',      'AdminController@edit_tag')->name('edit_tag');
 Route::get('/hapus/{id}',	  'AdminController@hapus')->name('hapus');
+Route::get('/hapus_banner/{id}',	  'AdminController@hapus_banner')->name('hapus_banner');
 Route::get('/hapus_kat/{id}',	  'AdminController@hapus_kat')->name('hapus_kat');
 Route::get('/hapus_tag/{id_tag}',	  'AdminController@hapus_tag')->name('hapus_tag');
 Route::get('/user',           'AdminController@user')->name('user');
 Route::get('/komentar',		  'AdminController@komentar')->name('komentar');
 Route::get('/hapusUser/{id}',	  'AdminController@hapusUser')->name('hapususer');
 
-/* -------------- User-----------*/
+/* -------------- User-----------aaa*/
 
 Route::post('/userInfo', 	'UserController@userInfo')->name('userinfo');
 Route::post('/addComment',  'UserController@addComment')->name('addcomment');
