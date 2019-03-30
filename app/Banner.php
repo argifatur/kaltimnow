@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Banner extends Model
 {
-      protected $fillable = [
-        'judul', 'foto' 
+		protected $table = 'banner';
+	protected $primaryKey = 'id';
+
+  protected $fillable = [
+        'judul', 'foto', 'path' 
     ];
 }
