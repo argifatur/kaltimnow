@@ -222,7 +222,7 @@ class AdminController extends Controller
         $kategori = Kategori::paginate(3);
 
 
-// mengirim data pegawai ke view tag
+// mengirim data pegawai ke view tagsd
         return view('admin.daftar_kat',['kategori' => $kategori]);
     }    
 
