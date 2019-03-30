@@ -60,7 +60,7 @@ Route::get('/user',           'AdminController@user')->name('user');
 Route::get('/komentar',		  'AdminController@komentar')->name('komentar');
 Route::get('/hapusUser/{id}',	  'AdminController@hapusUser')->name('hapususer');
 
-/* -------------- User-----------*/
+/* -------------- User-----------aaa*/
 
 Route::post('/userInfo', 	'UserController@userInfo')->name('userinfo');
 Route::post('/addComment',  'UserController@addComment')->name('addcomment');
