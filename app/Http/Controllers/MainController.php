@@ -106,27 +106,27 @@ public function fullTime($tgl){
 
 public function post(){
    $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
- return view('post', ['banner' => $banner]);
+   return view('post', ['banner' => $banner, 'beritaBaru' => $this->beritaBaru,  'beritaTerakhir' => $this->beritaTerakhir,'beritaPopuler' => $this->beritaPopuler,  'controller' => $this]);
 }
 
 public function about(){
    $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
-   return view('about', ['banner' => $banner]);
+   return view('about', ['banner' => $banner,'beritaBaru' => $this->beritaBaru, 'beritaTerakhir' => $this->beritaTerakhir,'beritaPopuler' => $this->beritaPopuler,  'controller' => $this]);
 }
 
 public function daftarpost(){
    $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
-   return view('daftarpost', ['banner' => $banner]);
+   return view('daftarpost', ['banner' => $banner, 'beritaBaru' => $this->beritaBaru, 'beritaTerakhir' => $this->beritaTerakhir,'beritaPopuler' => $this->beritaPopuler,  'controller' => $this]);
 }
 
 public function categori(){
    $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
-   return view('categori', ['banner' => $banner]);
+   return view('categori', ['banner' => $banner, 'beritaBaru' => $this->beritaBaru, 'beritaTerakhir' => $this->beritaTerakhir, 'beritaPopuler' => $this->beritaPopuler,  'controller' => $this]);
 }
 
 public function kontak(){
     $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
-    return view('kontak', ['banner' => $banner]);
+    return view('kontak', ['banner' => $banner, 'beritaBaru' => $this->beritaBaru, 'beritaTerakhir' => $this->beritaTerakhir, 'beritaPopuler' => $this->beritaPopuler, 'controller' => $this]);
 
 }
 
