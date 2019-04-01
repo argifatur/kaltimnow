@@ -8,8 +8,7 @@ class Banner extends Model
 {
 	protected $table = 'banner';
 	protected $primaryKey = 'id';
-
-  protected $fillable = [
+      protected $fillable = [
         'judul', 'foto', 'path' 
     ];
 }
