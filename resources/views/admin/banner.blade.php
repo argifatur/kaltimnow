@@ -22,7 +22,7 @@
                 <tr>
                   <th>#</th>
                   <th>Judul</th>
-                  <th>Gambar</th>
+                  <th>Gambar (728 x 90)</th>
                   <th>Tindakan</th>
                 </tr>
               </thead>
