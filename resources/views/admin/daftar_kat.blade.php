@@ -36,7 +36,7 @@
               <td>{{ $kat->judul_kategori }}</td>
               <td><div class="btn-group-sm">
                 <a class="btn btn-primary" href="{{route('edit_kat', $kat->id) }}"><span class="glyphicon glyphicon-pencil"></span> Ubah</a>
-                <a class="btn btn-danger" href="hapus_kat/{{ $kat->id }}" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"><span class="glyphicon glyphicon-trash"></span>Hapus</a>
+                <a class="btn btn-danger" href="hapus_kat/{{ $kat->id }}" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"><i class="fa fa-trash"></i>Hapus</a>
               </div></td>
             </tr>
           </tbody>

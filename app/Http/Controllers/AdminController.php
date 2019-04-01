@@ -8,7 +8,6 @@ use App\Berita;
 use App\Banner;
 use App\Kategori;
 use App\Tag;
-use App\Banner;
 use App\User; 
 use App\Comment;
 use Auth;
