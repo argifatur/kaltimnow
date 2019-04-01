@@ -41,8 +41,14 @@
 			<li class="nav-item active">
 				<a class="nav-link collapsed" href="{{route('dasbor')}}">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
-					<span>Dashboard</span></a>
-				</li>
+				<span>Dashboard</span></a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link collapsed" href="{{route('banner')}}">
+					<i class="fas fa-fw fa-picture-o text-white"></i>
+				<span class="text-white">Banner Iklan</span></a>
+			</li>
 				<!-- Nav Item - Pages Collapse Menu -->
 				<li class="nav-item">
 					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">

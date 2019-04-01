@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Visitor;
 use App\Berita;
+use App\Banner;
 use App\Comment;
 use App\Like;
 use DateTime;
@@ -26,10 +27,12 @@ class MainController extends Controller
 
     public function index(){
         $beritas     = Berita::orderBy('id', 'DESC')->paginate(3);
+        
+        $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
         $slides      = Berita::orderBy('id', 'DESC')->limit(3)->get();
         $beritaSaran = Berita::whereMonth("created_at", $this->month)->whereYear("created_at", $this->year)->orderBy("dilihat", "DESC")->limit(3)->get();
         
-        return view('index', ['beritas' => $beritas, 'beritaBaru' => $this->beritaBaru, 'beritaPopuler' => $this->beritaPopuler, 'beritaSaran' => $beritaSaran, 'slides' => $slides, 'controller' => $this]);
+        return view('index', ['beritas' => $beritas, 'beritaBaru' => $this->beritaBaru, 'beritaPopuler' => $this->beritaPopuler, 'beritaSaran' => $beritaSaran, 'banner' => $banner, 'controller' => $this]);
 
     }
     
@@ -98,23 +101,29 @@ public function fullTime($tgl){
 }
 
 public function post(){
-    return view('post');
+   $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
+ return view('post', ['banner' => $banner]);
 }
 
 public function about(){
-    return view('about');
+   $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
+   return view('about', ['banner' => $banner]);
 }
 
 public function daftarpost(){
-    return view('daftarpost');
+   $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
+   return view('daftarpost', ['banner' => $banner]);
 }
 
 public function categori(){
-    return view('categori');
+   $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
+   return view('categori', ['banner' => $banner]);
 }
 
 public function kontak(){
-    return view('kontak');
+    $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
+    return view('kontak', ['banner' => $banner]);
+
 }
 
 

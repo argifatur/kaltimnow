@@ -21,11 +21,10 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Judul</th>
-                  <th>Kategori</th>
+                  <th>Judul | Kategori</th>
+                  <th>Isi</th>
                   <th>Tanggal Dibuat</th>
                   <th>Gambar</th>
-                  <th>Konten</th>
                   <th>Tindakan</th>
                 </tr>
               </thead>
@@ -33,11 +32,10 @@
               <tbody>
                 <tr>
                   <td><?php echo $berita->id ?></td>
-                  <td><a href="berita/{{ $berita->path }}" class="col-12 sub-title-news">{{ $berita->judul }}</a></td>
-                  <td><?php $controller->kategori($berita->kategori); ?></td>
+                  <td><a href="berita/{{ $berita->path }}" class="col-12 sub-title-news">{{ $berita->judul }} |<?php $controller->kategori($berita->kategori); ?></a></td>
+                  <td>{{ $berita->path }}</td>
                   <td><?php $controller->tanggal($berita->created_at); ?></td>
                   <td><img src="public/img/{{ $berita->foto }}" style="height: 170px; width: 170px;" ></td>
-                  <td></td>
                   <td><div class="btn-group">
                     <a href="{{route('edit', $berita->id) }}" class="btn btn-primary" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i><br>Ubah</a>
                     <a href="hapus/{{ $berita->id }}" class="btn btn-danger" href="" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"><i class="fa fa-trash"></i><br>Hapus</a>

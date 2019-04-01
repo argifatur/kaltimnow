@@ -191,7 +191,7 @@
 							<div class="entry__header">
 								<a href="#" class="entry__meta-category">science</a>
 								<h2 class="entry__title">
-									<a href="">Optimal Amount of Rainfall for Plants</a>
+									<a href="{{ route('post') }}">Optimal Amount of Raiasdnfall for Plants</a>
 								</h2>
 								<ul class="entry__meta">
 									<li class="entry__meta-author">

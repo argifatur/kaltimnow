@@ -112,7 +112,7 @@
 
 					<!-- Mobile logo -->
 					<a href="index.html" class="logo logo--mobile d-lg-none">
-						<img class="logo__img_mobile" src="{{ asset('public/img/logo.png') }}" srcset="{{ asset('img/logo.png 1x, img/logo.png 2x') }}" alt="logo">
+						<img class="logo__img_mobile" src="{{ asset('public/img/logo.png') }}"  alt="logo">
 					</a>
 
 					<!-- Nav-wrap -->
@@ -167,17 +167,13 @@
       		<a class="social social-facebook social--nobase" href="#" title="facebook" target="_blank" aria-label="facebook">
       			<i class="ui-facebook"></i>
       		</a>
-      		<a class="social social-twitter social--nobase" href="#" title="twitter" target="_blank" aria-label="twitter">
-      			<i class="ui-twitter"></i>
+      		
+      		<a class="social social-instagram social--nobase" href="#" title="instagasdram" target="_blank" aria-label="instagram">
+      			<i class="ui-instagram"></i>
       		</a>
-      		<a class="social social-google social--nobase" href="#" title="google" target="_blank" aria-label="google">
-      			<i class="ui-google"></i>
-      		</a>
+
       		<a class="social social-youtube social--nobase" href="#" title="youtube" target="_blank" aria-label="youtube">
       			<i class="ui-youtube"></i>
-      		</a>
-      		<a class="social social-instagram social--nobase" href="#" title="instagram" target="_blank" aria-label="instagram">
-      			<i class="ui-instagram"></i>
       		</a>
       	</div>
 
@@ -216,9 +212,13 @@
 			</a>
 
 			<!-- Ad Banner 728 -->
-			<div class="text-center">
+			<div class="text-center banner" >
 				<a href="#">
-					<img src="{{ asset('public/img/banner.gif') }}" alt="">
+					@foreach( $banner as $banner)
+
+					<img src="public/img/{{ $banner->foto }}" alt="banner">
+
+					@endforeach
 				</a>
 			</div>
 

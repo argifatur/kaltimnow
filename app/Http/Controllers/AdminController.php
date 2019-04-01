@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Berita;
+use App\Banner;
 use App\Kategori;
 use App\Tag;
 use App\User; 
@@ -42,6 +43,9 @@ class AdminController extends Controller
     public function tambah_tag(){
         return view('admin.tambah_tag');
     }
+    public function tambah_banner(){
+        return view('admin.tambah_banner');
+    }
 
 
 
@@ -78,6 +82,33 @@ class AdminController extends Controller
 
         $berita->save();
         return redirect("/daftar")->with('msg', 'Berhasil Menambahkan Artikel!');
+    }
+
+    public function addBanner(Request $request){
+        $banner = DB::table('banner')->get();
+
+        $path     = str_replace("?", "", $request->judul);
+        $path     = explode(" ", $path);
+        $path     = implode("-", $path);
+
+        $banner = new Banner;
+        $banner->judul    = $request->judul;
+        $banner->path     = $path;
+
+        if($request->file('foto') != "") {
+            $file         = $request->file('foto');
+            $fileName     = $file->getClientOriginalName();
+            $dt           = new DateTime();
+            $time         = $dt->format('Y_m_d_H_i_s_');
+            $fileNameNew  = $time.$fileName;
+            $request->file('foto')->move("public/img/", $fileNameNew);
+
+            $banner->foto = $fileNameNew;
+        } 
+
+        $banner->save();
+        return redirect("/banner")->with('msg', 'Berhasil Menambahkan Banner!');
+
     }
 
     public function addKat(Request $request){
@@ -125,7 +156,34 @@ class AdminController extends Controller
         } else $berita->foto = $berita->foto;
 
         $berita->save();
-        return redirect("/edit/".$id)->with('msg', 'Berhasil Mengubah Artikel!');
+        return redirect("/daftar")->with('msg', 'Berhasil Mengubah Artikel!');
+    }
+
+    public function editBanner(Request $request, $id){
+
+
+        $path     = str_replace("?", "", $request->judul);
+        $path     = explode(" ", $path);
+        $path     = implode("-", $path);
+
+        $banner = Banner::find($id);
+        $banner->judul    = $request->judul;
+        $banner->path     = $path;
+
+        if($request->file('foto') != "") {
+            $file         = $request->file('foto');
+            $fileName     = $file->getClientOriginalName();
+            $dt           = new DateTime();
+            $time         = $dt->format('Y_m_d_H_i_s_');
+            $fileNameNew  = $time.$fileName;
+            $request->file('foto')->move("public/img/", $fileNameNew);
+
+            $banner->foto = $fileNameNew;
+        } else $banner->foto = $banner->foto;
+
+        $banner->save();
+        return redirect("/banner")->with('msg', 'Berhasil Mengubah Banner!');
+
     }
 
     public function editkat(Request $request, $id){
@@ -148,7 +206,9 @@ class AdminController extends Controller
 
         $tag->save();
         return redirect("/daftar_tag")->with('msg', 'Berhasil Mengubah Tag!');
-    }
+    }   
+
+   
 
     public function daftar(){
         $beritas = Berita::orderBy('id', 'DESC')->get();
@@ -156,13 +216,22 @@ class AdminController extends Controller
         return view('admin.daftar', ['beritas' => $beritas, 'controller' => $this]);
     }    
 
+  
+
     public function daftar_kat(){
         $kategori = DB::table('kategori')->get();
         $kategori = Kategori::paginate(3);
 
 
-// mengirim data pegawai ke view tag
+// mengirim data pegawai ke view tagsd
         return view('admin.daftar_kat',['kategori' => $kategori]);
+    }    
+
+    public function banner(){
+        $banner = DB::table('banner')->get();
+
+// mengirim data pegawai ke view tag
+        return view('admin.banner',['banner' => $banner]);
     }     
 
     public function daftar_tag(){
@@ -182,6 +251,11 @@ class AdminController extends Controller
     public function edit($id){
         $berita = Berita::find($id);
         return view('admin.edit', ['berita' => $berita]);
+    } 
+
+    public function edit_banner($id){
+        $banner = Banner::find($id);
+        return view('admin.edit_banner', ['banner' => $banner]);
     }
 
     public function edit_kat($id){
@@ -202,6 +276,14 @@ class AdminController extends Controller
         $berita = Berita::find($id);
         $berita->delete();
         return redirect('/daftar')->with('msg', 'Berhasil Menghapus Artikel!');
+    } 
+
+    public function hapus_banner($id){
+        $banner = Banner::find($id);
+        if ($banner != null) {
+            $banner->delete();
+            return redirect()->route('banner')->with(['msg'=> 'Berhasil Menghapus Kategori']);
+        }
     }
 
     public function hapus_kat($id){
@@ -221,8 +303,7 @@ class AdminController extends Controller
             $tag->delete();
             return redirect()->route('daftar_tag')->with(['msg'=> 'Berhasil Menghapus Tag']);
         }
-// $kategori->delete();
-    }
+    }  
 
     public function hapusUser($id){
         $user = User::find($id);

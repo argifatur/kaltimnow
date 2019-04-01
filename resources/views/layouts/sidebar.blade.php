@@ -12,9 +12,7 @@
 				<li class="tabs__item widget-tabpost__tabs-item">
 					<a href="#tab-latest" class="tabs__url tabs__trigger widget-tabpost__tabs-url">Latest</a>
 				</li>                                 
-				<li class="tabs__item widget-tabpost__tabs-item">
-					<a href="#tab-comments" class="tabs__url tabs__trigger widget-tabpost__tabs-url">Comments</a>
-				</li>                                 
+			                                
 			</ul> <!-- end tabs -->
 
 			<!-- tab content -->
