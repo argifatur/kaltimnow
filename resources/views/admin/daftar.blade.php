@@ -33,7 +33,8 @@
                 <tr>
                   <td><?php echo $berita->id ?></td>
                   <td><a href="berita/{{ $berita->path }}" class="col-12 sub-title-news">{{ $berita->judul }} |<?php $controller->kategori($berita->kategori); ?></a></td>
-                  <td>{{ $berita->path }}</td>
+                  <?php $isi = (strlen($berita->isi) > 200) ? substr($berita->isi, 0, 200) . "..." : $berita->isi; ?>
+                  <td>{!! $isi !!}</td>
                   <td><?php $controller->tanggal($berita->created_at); ?></td>
                   <td><img src="public/img/{{ $berita->foto }}" style="height: 170px; width: 170px;" ></td>
                   <td><div class="btn-group">
