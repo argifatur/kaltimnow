@@ -184,7 +184,8 @@
 								</ul>
 							</div>
 							<div class="entry__excerpt">
-								<p>{!! $berita->isi !!}</p>
+								<?php $isi = (strlen($berita->isi) > 200) ? substr($berita->isi, 0, 200) . "..." : $berita->isi; ?>
+								<p>{!! $isi !!}</p>
 							</div>
 						</div>
 					</article>
@@ -538,7 +539,8 @@
 				</ul>
 			</div>
 			<div class="entry__excerpt">
-				<p>{!! $berita->isi !!}</p>
+				<?php $isi = (strlen($berita->isi) > 200) ? substr($berita->isi, 0, 200) . "..." : $berita->isi; ?>
+								<p>{!! $isi !!}</p>
 			</div>
 		</div>
 	</article>

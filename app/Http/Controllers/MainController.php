@@ -105,23 +105,29 @@ public function fullTime($tgl){
 }
 
 public function post(){
-    return view('post');
+   $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
+ return view('post', ['banner' => $banner]);
 }
 
 public function about(){
-    return view('about');
+   $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
+   return view('about', ['banner' => $banner]);
 }
 
 public function daftarpost(){
-    return view('daftarpost');
+   $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
+   return view('daftarpost', ['banner' => $banner]);
 }
 
 public function categori(){
-    return view('categori');
+   $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
+   return view('categori', ['banner' => $banner]);
 }
 
 public function kontak(){
-    return view('kontak');
+    $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
+    return view('kontak', ['banner' => $banner]);
+
 }
 
 
