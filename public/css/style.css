@@ -25,6 +25,10 @@ iframe {
 
 }
 
+.banner {
+  min-height: 100px !important;
+}
+
 .clearfix:before, .clearfix:after {
   display: table;
   line-height: 0;
@@ -2867,6 +2871,10 @@ figcaption {
 .header {
   padding: 23px 0; }
 
+/*.header .banner{
+  max-height: 720px;
+  max-width: 90px; }
+*/
 /* Logo
 -------------------------------------------------------*/
 .logo {
