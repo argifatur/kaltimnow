@@ -44,10 +44,10 @@
 				<span>Dashboard</span></a>
 			</li>
 
-			<li class="nav-item active">
+			<li class="nav-item">
 				<a class="nav-link collapsed" href="{{route('banner')}}">
-					<i class="fas fa-fw fa-picture-o"></i>
-				<span>Banner Iklan</span></a>
+					<i class="fas fa-fw fa-picture-o text-white"></i>
+				<span class="text-white">Banner Iklan</span></a>
 			</li>
 				<!-- Nav Item - Pages Collapse Menu -->
 				<li class="nav-item">
