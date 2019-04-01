@@ -156,7 +156,7 @@ class AdminController extends Controller
         } else $berita->foto = $berita->foto;
 
         $berita->save();
-        return redirect("/edit/".$id)->with('msg', 'Berhasil Mengubah Artikel!');
+        return redirect("/daftar")->with('msg', 'Berhasil Mengubah Artikel!');
     }
 
     public function editBanner(Request $request, $id){
@@ -176,13 +176,14 @@ class AdminController extends Controller
             $dt           = new DateTime();
             $time         = $dt->format('Y_m_d_H_i_s_');
             $fileNameNew  = $time.$fileName;
-            $request->file('foto')->move("img/", $fileNameNew);
+            $request->file('foto')->move("public/img/", $fileNameNew);
 
             $banner->foto = $fileNameNew;
         } else $banner->foto = $banner->foto;
 
         $banner->save();
-        return redirect("/edit_banner/".$id)->with('msg', 'Berhasil Mengubah Banner!');
+        return redirect("/banner")->with('msg', 'Berhasil Mengubah Banner!');
+
     }
 
     public function editkat(Request $request, $id){

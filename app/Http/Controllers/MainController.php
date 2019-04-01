@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Visitor;
 use App\Berita;
+use App\Banner;
 use App\Comment;
 use App\Like;
 use DateTime;
@@ -26,10 +27,12 @@ class MainController extends Controller
 
     public function index(){
         $beritas     = Berita::orderBy('id', 'DESC')->paginate(3);
+        
+        $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
         $slides      = Berita::orderBy('id', 'DESC')->limit(3)->get();
         $beritaSaran = Berita::whereMonth("created_at", $this->month)->whereYear("created_at", $this->year)->orderBy("dilihat", "DESC")->limit(3)->get();
         
-        return view('index', ['beritas' => $beritas, 'beritaBaru' => $this->beritaBaru, 'beritaPopuler' => $this->beritaPopuler, 'beritaSaran' => $beritaSaran, 'slides' => $slides, 'controller' => $this]);
+        return view('index', ['beritas' => $beritas, 'beritaBaru' => $this->beritaBaru, 'beritaPopuler' => $this->beritaPopuler, 'beritaSaran' => $beritaSaran, 'banner' => $banner, 'controller' => $this]);
 
     }
     

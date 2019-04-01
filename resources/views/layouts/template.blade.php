@@ -218,7 +218,11 @@
 			<!-- Ad Banner 728 -->
 			<div class="text-center">
 				<a href="#">
-					<img src="{{ asset('public/img/banner.gif') }}" alt="">
+					@foreach( $banner as $banner)
+
+					<img src="public/img/{{ $banner->foto }}" alt="banner">
+
+					@endforeach
 				</a>
 			</div>
 
