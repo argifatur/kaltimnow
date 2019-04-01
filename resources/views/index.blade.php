@@ -14,8 +14,11 @@
 				<div class="container relative">
 					<span class="trending-now__label">Trending</span>
 					<ul class="newsticker">
-						<li class="newsticker__item"><a href="single-post.html" class="newsticker__item-url">Indahnya kebersamaan di hari lebaran</a></li>
-						<li class="newsticker__item"><a href="single-post-1.html" class="newsticker__item-url">Prediksi Persija vs Borneo Fc, Duel orange </a></li>        
+
+					@foreach ($beritaPopuler as $berita)
+						<li class="newsticker__item"><a href="single-post.html" class="newsticker__item-url">{{ $berita->judul }}</a></li> 
+						@endforeach
+						   
 					</ul>
 					<div class="newsticker-buttons">
 						<button class="newsticker-button newsticker-button--prev" id="newsticker-button--prev" aria-label="next article"><i class="ui-arrow-left"></i></button>
@@ -33,51 +36,25 @@
 						<!-- Large post slider -->
 						<div class="featured-posts-grid__item featured-posts-grid__item">
 							<div id="owl-hero-grid" class="owl-carousel owl-theme owl-carousel--dots-inside">
+									@foreach($slides as $slide)
 
 								<article class="entry featured-posts-grid__entry">
-									<div class="thumb-bg-holder owl-lazy" data-src="{{ asset('public/img/ps.jpg') }}">    
+									<div class="thumb-bg-holder owl-lazy" data-src="public/img/{{ $slide->foto }}">    
 										<img src="img/blog/featured_grid_slide_1.jpg" alt="" class="d-none">
 										<a href="{{ route('post') }}" class="thumb-url"></a>
+
 										<div class="bottom-gradient"></div>
 									</div>
-
+									
 									<div class="thumb-text-holder">
-										<a href="single-post.html" class="entry__meta-category entry__meta-category-color entry__meta-category-color--salad">Lifestyle</a>   
+										<a href="single-post.html" class="entry__meta-category entry__meta-category-color entry__meta-category-color--salad"><?php
+															$controller->kategori($slide->kategori); ?></a>   
 										<h2 class="thumb-entry-title">
-											<a href="{{ route('post') }}">See a 360-Degree View of the Top of the Everest</a>
+											<a href="{{ route('post') }}">{{ $slide->judul }}</a>
 										</h2>
 									</div>
 								</article>
-
-								<article class="entry featured-posts-grid__entry">
-									<div class="thumb-bg-holder owl-lazy" data-src="{{ asset('public/img/warning.jpg') }}">
-										<img src="img/blog/featured_grid_slide_2.jpg" alt="" class="d-none">
-										<a href="single-post.html" class="thumb-url"></a>
-										<div class="bottom-gradient"></div>
-									</div>
-
-									<div class="thumb-text-holder">
-										<a href="single-post.html" class="entry__meta-category entry__meta-category-color entry__meta-category-blob:file:///6da42eff-39b5-471c-9ace-33784506db69color--blue">Business</a>   
-										<h2 class="thumb-entry-title">
-											<a href="single-post.html">BRICS Nations Agree to Create Own Development Bank</a>
-										</h2>
-									</div>
-								</article>
-
-								<article class="entry featured-posts-grid__entry">
-									<div class="thumb-bg-holder owl-lazy" data-src="{{ asset('public/img/ci.png') }}">
-										<img src="img/blog/featured_grid_slide_3.jpg" alt="" class="d-none">
-										<a href="single-post.html" class="thumb-url"></a>
-										<div class="bottom-gradient"></div>
-									</div>
-
-									<div class="thumb-text-holder">
-										<a href="single-post.html" class="entry__meta-category entry__meta-category-color entry__meta-category-color--purple">Tech</a>   
-										<h2 class="thumb-entry-title">
-											<a href="single-post.html">Tesla's Giant Battery Farm Is Now Live in South Australia</a>
-										</h2>
-									</div>
-								</article>
+																	@endforeach
 
 							</div> <!-- end owl slider -->
 						</div> <!-- end large post slider -->
@@ -152,7 +129,7 @@
 		<h3 class="section-title">Hot News</h3>
 
 		<div class="tabs tab-post__tabs"> 
-			<ul class="tabs__list">
+		<!-- 	<ul class="tabs__list">
 				<li class="tabs__item tabs__item--active">
 					<a href="#tab-all" class="tabs__trigger">All</a>
 				</li>
@@ -168,7 +145,7 @@
 				<li class="tabs__item">
 					<a href="#tab-marketing" class="tabs__trigger">Marketing</a>
 				</li>
-			</ul> <!-- end tabs -->
+			</ul> <!-- end tabs --> 
 		</div>
 	</div>
 
@@ -177,30 +154,28 @@
 
 		<div class="tabs__content-pane tabs__content-pane--active" id="tab-all">
 			<div class="row">
+				@foreach ($beritaBaru as $berita)
 				<div class="col-md-6">
 					<article class="entry">
 						<div class="entry__img-holder">
 							<a href="single-post.html">
 								<div class="thumb-container thumb-75">
-									<img data-src="{{ asset('public/img/asus.jpg') }}" src="img/asus.jpg" class="entry__img lazyload" alt="" />
+									<img data-src="public/img/{{ $berita->foto }}" src="public/img/{{ $berita->foto }}" class="entry__img lazyload" alt="" />
 								</div>
 							</a>
 						</div>
 
 						<div class="entry__body">
 							<div class="entry__header">
-								<a href="#" class="entry__meta-category">science</a>
+								<a href="#" class="entry__meta-category"><?php
+											$controller->kategori($berita->kategori); ?></a>
 								<h2 class="entry__title">
-									<a href="{{ route('post') }}">Optimal Amount of Raiasdnfall for Plants</a>
+									<a href="">{{ $berita->judul }}</a>
 								</h2>
 								<ul class="entry__meta">
-									<li class="entry__meta-author">
-										<i class="ui-author"></i>
-										<a href="#">DeoThemes</a>
-									</li>
 									<li class="entry__meta-date">
 										<i class="ui-date"></i>
-										21 October, 2017
+											<?php $controller->tanggal($berita->created_at); ?>
 									</li>
 									<li class="entry__meta-comments">
 										<i class="ui-comments"></i>
@@ -209,50 +184,14 @@
 								</ul>
 							</div>
 							<div class="entry__excerpt">
-								<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+								<?php $isi = (strlen($berita->isi) > 200) ? substr($berita->isi, 0, 200) . "..." : $berita->isi; ?>
+								<p>{!! $isi !!}</p>
 							</div>
 						</div>
 					</article>
 				</div>
-				<div class="col-md-6">
-					<article class="entry">
-						<div class="entry__img-holder">
-							<a href="single-post.html">
-								<div class="thumb-container thumb-75">
-									<img data-src="{{ asset('public/img/res.png') }}" src="img/empty.png" class="entry__img lazyload" alt="" />
-								</div>
-							</a>
-						</div>
-
-						<div class="entry__body">
-							<div class="entry__header">
-								<a href="#" class="entry__meta-category">business</a>
-								<h2 class="entry__title">
-									<a href="single-post.html">BRICS Nations Agree to Create Own Development Bank</a>
-								</h2>
-								<ul class="entry__meta">
-									<li class="entry__meta-author">
-										<i class="ui-author"></i>
-										<a href="#">DeoThemes</a>
-									</li>
-									<li class="entry__meta-date">
-										<i class="ui-date"></i>
-										21 October, 2017
-									</li>
-									<li class="entry__meta-comments">
-										<i class="ui-comments"></i>
-										<a href="#">115</a>
-									</li>
-								</ul>
-							</div>
-							<div class="entry__excerpt">
-								<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-							</div>
-						</div>
-					</article>
-				</div>
-			</div>
-		</div> <!-- end pane 1 -->
+				@endforeach
+				
 		<div class="tabs__content-pane" id="tab-world">
 			<div class="row">
 				<div class="col-md-6">
@@ -574,118 +513,38 @@
 		<h3 class="section-title">Latest News</h3>
 		<a href="#" class="all-posts-url">View All</a>
 	</div>
-
+	@foreach($beritaHot as $berita)
 	<article class="entry post-list">
 		<div class="entry__img-holder post-list__img-holder">
 			<a href="single-post.html">
 				<div class="thumb-container thumb-75">
-					<img data-src="{{ asset('public/img/asus.jpg') }}" src="img/empty.png" class="entry__img lazyload" alt="">
+					<img data-src="public/img/{{ $berita->foto }}" src="public/img/{{ $berita->foto }}" class="entry__img lazyload" alt="">
 				</div>
 			</a>
 		</div>
 
 		<div class="entry__body post-list__body">
 			<div class="entry__header">
-				<a href="#" class="entry__meta-category">business</a>
+				<a href="#" class="entry__meta-category"><?php
+												$controller->kategori($berita->kategori); ?></a>
 				<h2 class="entry__title">
-					<a href="single-post.html">Your Business Is Talking. Do You Have the Tools to Listen?</a>
+					<a href="single-post.html">{{$berita->judul}}</a>
 				</h2>
 				<ul class="entry__meta">
-					<li class="entry__meta-author">
-						<i class="ui-author"></i>
-						<a href="#">DeoThemes</a>
-					</li>
 					<li class="entry__meta-date">
 						<i class="ui-date"></i>
-						21 October, 2017
-					</li>
-					<li class="entry__meta-comments">
-						<i class="ui-comments"></i>
-						<a href="#">115</a>
+				<?php
+				$controller->tanggal($berita->created_at); ?>
 					</li>
 				</ul>
 			</div>
 			<div class="entry__excerpt">
-				<p>Point of Sale hardware, the till at a shop check out, has become very complex over the past ten years. Modern POS hardware includes the cash till, bar-code readers...</p>
+				<?php $isi = (strlen($berita->isi) > 200) ? substr($berita->isi, 0, 200) . "..." : $berita->isi; ?>
+								<p>{!! $isi !!}</p>
 			</div>
 		</div>
 	</article>
-
-	<article class="entry post-list">
-		<div class="entry__img-holder post-list__img-holder">
-			<a href="single-post.html">
-				<div class="thumb-container thumb-75">
-					<img data-src="{{ asset('public/img/warning.jpg') }}" src="img/empty.png" class="entry__img lazyload" alt="">
-				</div>
-			</a>
-		</div>
-
-		<div class="entry__body post-list__body">
-			<div class="entry__header">
-				<a href="#" class="entry__meta-category">tech</a>
-				<h2 class="entry__title">
-					<a href="single-post.html">Removing Bitcoin payments from Steam is a smart move by Valve</a>
-				</h2>
-				<ul class="entry__meta">
-					<li class="entry__meta-author">
-						<i class="ui-author"></i>
-						<a href="#">DeoThemes</a>
-					</li>
-					<li class="entry__meta-date">
-						<i class="ui-date"></i>
-						21 October, 2017
-					</li>
-					<li class="entry__meta-comments">
-						<i class="ui-comments"></i>
-						<a href="#">115</a>
-					</li>
-				</ul>
-			</div>
-			<div class="entry__excerpt">
-				<p>Point of Sale hardware, the till at a shop check out, has become very complex over the past ten years. Modern POS hardware includes the cash till, bar-code readers...</p>
-			</div>
-		</div>
-	</article>
-
-	<article class="entry post-list">
-		<div class="entry__img-holder post-list__img-holder">
-			<a href="single-post.html">
-				<div class="thumb-container thumb-75">
-					<img data-src="{{ asset('public/img/ps.jpg') }}" src="img/empty.png" class="entry__img lazyload" alt="">
-				</div>
-			</a>
-		</div>
-
-		<div class="entry__body post-list__body">
-			<div class="entry__header">
-				<a href="#" class="entry__meta-category">fashion</a>
-				<h2 class="entry__title">
-					<a href="single-post.html">This Is the Burberry Bag Every Fashion Girl Wanted 15 Years Ago</a>
-				</h2>
-				<ul class="entry__meta">
-					<li class="entry__meta-author">
-						<i class="ui-author"></i>
-						<a href="#">DeoThemes</a>
-					</li>
-					<li class="entry__meta-date">
-						<i class="ui-date"></i>
-						21 October, 2017
-					</li>
-					<li class="entry__meta-comments">
-						<i class="ui-comments"></i>
-						<a href="#">115</a>
-					</li>
-				</ul>
-			</div>
-			<div class="entry__excerpt">
-				<p>Point of Sale hardware, the till at a shop check out, has become very complex over the past ten years. Modern POS hardware includes the cash till, bar-code readers...</p>
-			</div>
-		</div>
-	</article>
-
-</section> <!-- end latest news -->
-
-
+	@endforeach
 
 <!-- Carousel posts -->
 <section class="section mb-20">
@@ -703,11 +562,12 @@
 
 	<!-- Slider -->
 	<div id="owl-posts" class="owl-carousel owl-theme">
+		@foreach($beritaBaru as $berita)
 		<article class="entry">
 			<div class="entry__img-holder">
 				<a href="single-post.html">
 					<div class="thumb-container thumb-75">
-						<img data-src="{{ asset('public/img/aasd.png') }}" src="img/aasd.png" class="entry__img owl-lazy" alt="" />
+						<img data-src="public/img/{{ $berita->foto }}" src="public/img/{{ $berita->foto }}" class="entry__img owl-lazy" alt="" />
 					</div>
 				</a>
 			</div>
@@ -715,75 +575,19 @@
 			<div class="entry__body">
 				<div class="entry__header">
 					<h2 class="entry__title entry__title--sm">
-						<a href="single-post.html">The Surprising Way This Designer Picked the Next It Colors</a>
+						<a href="single-post.html">{{ $berita->judul }}</a>
 					</h2>
 					<ul class="entry__meta">
 						<li class="entry__meta-date">
 							<i class="ui-date"></i>
-							21 October, 2017
-						</li>
-						<li class="entry__meta-comments">
-							<i class="ui-comments"></i>
-							<a href="#">115</a>
+												<?php $controller->tanggal($berita->created_at); ?>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</article>
-		<article class="entry">
-			<div class="entry__img-holder">
-				<a href="single-post.html">
-					<div class="thumb-container thumb-75">
-						<img data-src="{{ asset('public/img/res.png') }}" src="img/res.png" class="entry__img owl-lazy" alt="" />
-					</div>
-				</a>
-			</div>
-
-			<div class="entry__body">
-				<div class="entry__header">
-					<h2 class="entry__title entry__title--sm">
-						<a href="single-post.html">What Fashion Editors Are Buying for Every Kid on Our Holiday List</a>
-					</h2>
-					<ul class="entry__meta">
-						<li class="entry__meta-date">
-							<i class="ui-date"></i>
-							21 October, 2017
-						</li>
-						<li class="entry__meta-comments">
-							<i class="ui-comments"></i>
-							<a href="#">115</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</article>
-		<article class="entry">
-			<div class="entry__img-holder">
-				<a href="single-post.html">
-					<div class="thumb-container thumb-75">
-						<img data-src="{{ asset('public/img/ukhuwahislamiah.jpg') }}" src="{{ ('img/ukhuwahislamiah.jpg') }}" class="entry__img owl-lazy" alt="" />
-					</div>
-				</a>
-			</div>
-
-			<div class="entry__body">
-				<div class="entry__header">
-					<h2 class="entry__title entry__title--sm">
-						<a href="single-post.html">Why Coach's Cute New Holiday Collab Is Unexpected</a>
-					</h2>
-					<ul class="entry__meta">
-						<li class="entry__meta-date">
-							<i class="ui-date"></i>
-							21 October, 2017
-						</li>
-						<li class="entry__meta-comments">
-							<i class="ui-comments"></i>
-							<a href="#">115</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</article>
+		@endforeach
+		
 	</div> <!-- end slider -->
 
 </section>

@@ -11,8 +11,7 @@
 				</li>                                 
 				<li class="tabs__item widget-tabpost__tabs-item">
 					<a href="#tab-latest" class="tabs__url tabs__trigger widget-tabpost__tabs-url">Latest</a>
-				</li>                                 
-			                                
+				</li>                                
 			</ul> <!-- end tabs -->
 
 			<!-- tab content -->
@@ -20,187 +19,62 @@
 
 				<div class="tabs__content-pane tabs__content-pane--active" id="tab-trending">
 					<ul class="post-list-small">
+						@foreach ($beritaPopuler as $berita)
 						<li class="post-list-small__item">
 							<article class="post-list-small__entry clearfix">
 								<div class="post-list-small__img-holder">
 									<div class="thumb-container thumb-75">
 										<a href="single-post.html">
-											<img data-src="{{ asset('public/img/res.png') }}" src="img/empty.png" alt="" class=" lazyload">
+											<img data-src="public/img/{{ $berita->foto }}" src="public/img/{{ $berita->foto }}" alt="" class=" lazyload">
 										</a>
 									</div>
 								</div>
 								<div class="post-list-small__body">
 									<h3 class="post-list-small__entry-title">
-										<a href="single-post.html">Google is fixing its troubling burger emoji in Android 8.1</a>
+										<a href="single-post.html">{{ $berita->judul }}</a>
 									</h3>
 									<ul class="entry__meta">
 										<li class="entry__meta-date">
 											<i class="ui-date"></i>
-											21 October, 2017
+											<?php
+											$controller->tanggal($berita->created_at);
+											?>
 										</li>
 									</ul>
 								</div>                  
 							</article>
 						</li>
-						<li class="post-list-small__item">
-							<article class="post-list-small__entry clearfix">
-								<div class="post-list-small__img-holder">
-									<div class="thumb-container thumb-75">
-										<a href="single-post.html">
-											<img data-src="{{ asset('public/img/asus.jpg') }}" src="img/empty.png" alt="" class=" lazyload">
-										</a>
-									</div>
-								</div>
-								<div class="post-list-small__body">
-									<h3 class="post-list-small__entry-title">
-										<a href="single-post.html">How Meditation Can Transform Your Business</a>
-									</h3>
-									<ul class="entry__meta">
-										<li class="entry__meta-date">
-											<i class="ui-date"></i>
-											21 October, 2017
-										</li>
-									</ul>
-								</div>                  
-							</article>
-						</li>
-						<li class="post-list-small__item">
-							<article class="post-list-small__entry clearfix">
-								<div class="post-list-small__img-holder">
-									<div class="thumb-container thumb-75">
-										<a href="single-post.html">
-											<img data-src="{{ asset('public/img/ci.png') }}" src="img/empty.png" alt="" class=" lazyload">
-										</a>
-									</div>
-								</div>
-								<div class="post-list-small__body">
-									<h3 class="post-list-small__entry-title">
-										<a href="single-post.html">June in Africa: Taxi wars, smarter cities and increased investments</a>
-									</h3>
-									<ul class="entry__meta">
-										<li class="entry__meta-date">
-											<i class="ui-date"></i>
-											21 October, 2017
-										</li>
-									</ul>
-								</div>                  
-							</article>
-						</li>
-						<li class="post-list-small__item">
-							<article class="post-list-small__entry clearfix">
-								<div class="post-list-small__img-holder">
-									<div class="thumb-container thumb-75">
-										<a href="single-post.html">
-											<img data-src="{{ asset('public/img/aasd.png') }}" src="img/empty.png" alt="" class=" lazyload">
-										</a>
-									</div>
-								</div>
-								<div class="post-list-small__body">
-									<h3 class="post-list-small__entry-title">
-										<a href="single-post.html">PUBG Desert Map Finally Revealed, Here Are All The Details</a>
-									</h3>
-									<ul class="entry__meta">
-										<li class="entry__meta-date">
-											<i class="ui-date"></i>
-											21 October, 2017
-										</li>
-									</ul>
-								</div>                  
-							</article>
-						</li>
+						@endforeach
 					</ul>
 				</div>
 
 				<div class="tabs__content-pane" id="tab-latest">
 					<ul class="post-list-small">
+						@foreach ($beritaBaru as $berita)
 						<li class="post-list-small__item">
 							<article class="post-list-small__entry clearfix">
 								<div class="post-list-small__img-holder">
 									<div class="thumb-container thumb-75">
 										<a href="single-post.html">
-											<img data-src="{{ asset('public/img/blog/popular_post_2.jpg') }}" src="img/empty.png" alt="" class=" lazyload">
+											<img data-src="public/img/{{ $berita->foto }}" src="public/img/{{ $berita->foto }}" alt="" class=" lazyload">
 										</a>
 									</div>
 								</div>
 								<div class="post-list-small__body">
 									<h3 class="post-list-small__entry-title">
-										<a href="single-post.html">How Meditation Can Transform Your Business</a>
+										<a href="single-post.html">{{ $berita->judul }}</a>
 									</h3>
 									<ul class="entry__meta">
 										<li class="entry__meta-date">
-											<i class="ui-date"></i>
-											21 October, 2017
+											<i class="ui-date"></i> <?php
+												$controller->tanggal($berita->created_at); ?>
 										</li>
 									</ul>
 								</div>                  
 							</article>
 						</li>
-						<li class="post-list-small__item">
-							<article class="post-list-small__entry clearfix">
-								<div class="post-list-small__img-holder">
-									<div class="thumb-container thumb-75">
-										<a href="single-post.html">
-											<img data-src="{{ asset('public/img/blog/popular_post_1.jpg') }}" src="img/empty.png" alt="" class=" lazyload">
-										</a>
-									</div>
-								</div>
-								<div class="post-list-small__body">
-									<h3 class="post-list-small__entry-title">
-										<a href="single-post.html">Google is fixing its troubling burger emoji in Android 8.1</a>
-									</h3>
-									<ul class="entry__meta">
-										<li class="entry__meta-date">
-											<i class="ui-date"></i>
-											21 October, 2017
-										</li>
-									</ul>
-								</div>                  
-							</article>
-						</li>                    
-						<li class="post-list-small__item">
-							<article class="post-list-small__entry clearfix">
-								<div class="post-list-small__img-holder">
-									<div class="thumb-container thumb-75">
-										<a href="single-post.html">
-											<img data-src="{{ asset('public/img/blog/popular_post_3.jpg') }}" src="img/empty.png" alt="" class=" lazyload">
-										</a>
-									</div>
-								</div>
-								<div class="post-list-small__body">
-									<h3 class="post-list-small__entry-title">
-										<a href="single-post.html">June in Africa: Taxi wars, smarter cities and increased investments</a>
-									</h3>
-									<ul class="entry__meta">
-										<li class="entry__meta-date">
-											<i class="ui-date"></i>
-											21 October, 2017
-										</li>
-									</ul>
-								</div>                  
-							</article>
-						</li>
-						<li class="post-list-small__item">
-							<article class="post-list-small__entry clearfix">
-								<div class="post-list-small__img-holder">
-									<div class="thumb-container thumb-75">
-										<a href="single-post.html">
-											<img data-src="{{ asset('public/img/blog/popular_post_4.jpg') }}" src="img/empty.png" alt="" class=" lazyload">
-										</a>
-									</div>
-								</div>
-								<div class="post-list-small__body">
-									<h3 class="post-list-small__entry-title">
-										<a href="single-post.html">PUBG Desert Map Finally Revealed, Here Are All The Details</a>
-									</h3>
-									<ul class="entry__meta">
-										<li class="entry__meta-date">
-											<i class="ui-date"></i>
-											21 October, 2017
-										</li>
-									</ul>
-								</div>                  
-							</article>
-						</li>
+						@endforeach
+						
 					</ul>
 				</div>
 
@@ -328,48 +202,6 @@
 		</ul>
 	</div> <!-- end widget ad 300 -->
 
-	<!-- Widget Carousel -->
-	<div class="widget">
-		<h4 class="widget-title">Featured Posts</h4>
-		<div id="owl-single" class="owl-carousel owl-theme">
-
-			<article class="entry">
-				<div class="entry__img-holder mb-0">
-					<a href="single-post.html">
-						<div class="thumb-bg-holder">
-							<img data-src="{{ asset('public/img/asus.jpg') }}" src="img/asus.jpg" class="entry__img owl-lazy" alt="">
-							<div class="bottom-gradient"></div>
-						</div>
-					</a>
-				</div>
-
-				<div class="thumb-text-holder">  
-					<h2 class="thumb-entry-title thumb-entry-title--sm">
-						<a href="single-post.html">Myanmar little monk reading book outside monastery</a>
-					</h2>
-				</div>
-			</article>
-
-			<article class="entry">
-				<div class="entry__img-holder mb-0">
-					<a href="single-post.html">
-						<div class="thumb-bg-holder">
-							<img data-src="{{ asset('public/img/warning.jpg') }}" src="img/warning.jpg" class="entry__img owl-lazy" alt="">
-							<div class="bottom-gradient"></div>
-						</div>
-					</a>
-				</div>
-
-				<div class="thumb-text-holder">  
-					<h2 class="thumb-entry-title thumb-entry-title--sm">
-						<a href="single-post.html">Spectacular display of northern lights illuminates sky</a>
-					</h2>
-				</div>
-			</article>
-
-
-		</div>
-	</div>
 
 	<!-- Widget Socials -->
 	<div class="widget widget-socials">

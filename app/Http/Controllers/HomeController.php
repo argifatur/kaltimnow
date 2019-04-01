@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use DateTime;
 use App\User;
+use App\Banner;
 use App\Visitor;
 date_default_timezone_set("Asia/Jakarta");
 

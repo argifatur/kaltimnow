@@ -21,18 +21,22 @@ class MainController extends Controller
         $this->year  = $date->format('Y');
 
         $this->beritaBaru    = Berita::orderBy('id', 'DESC')->limit(5)->get();
+        $this->beritaTerakhir    = Berita::orderBy('id', 'DESC')->limit(2)->get();
         $this->beritaPopuler = Berita::orderBy('dilihat', 'DESC')->limit(5)->get();
+        $this->beritaHot = Berita::orderBy('updated_at', 'DESC')->limit(2)->get();
+
     }
 
 
     public function index(){
         $beritas     = Berita::orderBy('id', 'DESC')->paginate(3);
-        
+
         $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
-        $slides      = Berita::orderBy('id', 'DESC')->limit(3)->get();
-        $beritaSaran = Berita::whereMonth("created_at", $this->month)->whereYear("created_at", $this->year)->orderBy("dilihat", "DESC")->limit(3)->get();
+
+        $slides      = Berita::orderBy('id', 'DESC')->limit(9)->get();
+        $beritaSaran = Berita::whereMonth("created_at", $this->month)->whereYear("created_at", $this->year)->orderBy("dilihat", "DESC")->limit(4)->get();
         
-        return view('index', ['beritas' => $beritas, 'beritaBaru' => $this->beritaBaru, 'beritaPopuler' => $this->beritaPopuler, 'beritaSaran' => $beritaSaran, 'banner' => $banner, 'controller' => $this]);
+        return view('index', ['beritas' => $beritas, 'beritaBaru' => $this->beritaBaru,  'beritaHot' => $this->beritaHot, 'beritaTerakhir' => $this->beritaTerakhir, 'beritaPopuler' => $this->beritaPopuler, 'beritaSaran' => $beritaSaran,'slides' => $slides, 'banner' => $banner, 'controller' => $this]);
 
     }
     

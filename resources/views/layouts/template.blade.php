@@ -214,11 +214,11 @@
 			<!-- Ad Banner 728 -->
 			<div class="text-center banner" >
 				<a href="#">
-					@foreach( $banner as $banner)
-
-					<img src="public/img/{{ $banner->foto }}" alt="banner">
-
+					@foreach($banner as $banner)
+						<img src="public/img/{{ $banner->foto }}" alt="banner">					
 					@endforeach
+
+					
 				</a>
 			</div>
 
@@ -244,50 +244,30 @@
 				<div class="col-lg-4 col-md-8">
 					<h4 class="widget-title">Latest Posts</h4>
 					<ul class="post-list-small">
+				@foreach($beritaTerakhir as $berita)
 						<li class="post-list-small__item">
 							<article class="post-list-small__entry clearfix">
 								<div class="post-list-small__img-holder">
 									<div class="thumb-container thumb-75">
 										<a href="single-post.html">
-											<img data-src="{{ asset('public/img/ps.jpg') }}" src="{{ asset('public/img/ps.jpg') }}" alt="" class="lazyload">
+											<img data-src="public/img/{{ $berita->foto }}" src="public/img/{{ $berita->foto }}" alt="" class="lazyload">
 										</a>
 									</div>
 								</div>
 								<div class="post-list-small__body">
 									<h3 class="post-list-small__entry-title">
-										<a href="single-post.html">Google is fixing its troubling burger emoji in Android 8.1</a>
+										<a href="single-post.html">{{ $berita->judul }}</a>
 									</h3>
 									<ul class="entry__meta">
 										<li class="entry__meta-date">
-											<i class="ui-date"></i>
-											21 October, 2017
+											<i class="ui-date"></i> <?php
+												$controller->tanggal($berita->created_at); ?>
 										</li>
 									</ul>
 								</div>                  
 							</article>
 						</li>
-						<li class="post-list-small__item">
-							<article class="post-list-small__entry clearfix">
-								<div class="post-list-small__img-holder">
-									<div class="thumb-container thumb-75">
-										<a href="single-post.html">
-											<img data-src="{{ asset('public/img/blog/popular_post_2.jpg') }}" src="{{ asset('public/img/empty.png') }}" alt="" class="lazyload">
-										</a>
-									</div>
-								</div>
-								<div class="post-list-small__body">
-									<h3 class="post-list-small__entry-title">
-										<a href="single-post.html">How Meditation Can Transform Your Business</a>
-									</h3>
-									<ul class="entry__meta">
-										<li class="entry__meta-date">
-											<i class="ui-date"></i>
-											21 October, 2017
-										</li>
-									</ul>
-								</div>                  
-							</article>
-						</li>
+						@endforeach
 					</ul>
 				</div>
 

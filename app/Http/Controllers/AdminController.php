@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Berita;
-use App\Banner;
 use App\Kategori;
 use App\Tag;
 use App\User; 
@@ -150,7 +149,7 @@ class AdminController extends Controller
             $dt           = new DateTime();
             $time         = $dt->format('Y_m_d_H_i_s_');
             $fileNameNew  = $time.$fileName;
-            $request->file('foto')->move("img/", $fileNameNew);
+            $request->file('foto')->move("public/img/", $fileNameNew);
 
             $berita->foto = $fileNameNew;
         } else $berita->foto = $berita->foto;
