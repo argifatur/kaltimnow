@@ -33,12 +33,9 @@
 									<h3 class="post-list-small__entry-title">
 										<a href="single-post.html">{{ $berita->judul }}</a>
 									</h3>
-									<ul class="entry__meta">
-										<li class="entry__meta-date">
-											<i class="ui-date"></i>
-											<?php
-											$controller->tanggal($berita->created_at);
-											?>
+									<ul class="entry__meta"><i class="ui-date"></i>
+										<li class="entry__meta-date">									
+											<?php $controller->tanggal($berita->created_at); ?>										
 										</li>
 									</ul>
 								</div>                  
@@ -64,10 +61,9 @@
 									<h3 class="post-list-small__entry-title">
 										<a href="single-post.html">{{ $berita->judul }}</a>
 									</h3>
-									<ul class="entry__meta">
-										<li class="entry__meta-date">
-											<i class="ui-date"></i> <?php
-												$controller->tanggal($berita->created_at); ?>
+									<ul class="entry__meta"><i class="ui-date"></i>
+										<li class="entry__meta-date">									
+											<?php $controller->tanggal($berita->created_at); ?>										
 										</li>
 									</ul>
 								</div>                  
