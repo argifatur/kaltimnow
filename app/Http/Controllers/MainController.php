@@ -35,9 +35,9 @@ class MainController extends Controller
         $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
 
         $slides      = Berita::orderBy('id', 'DESC')->limit(9)->get();
-        $beritaSaran = Berita::whereMonth("created_at", $this->month)->whereYear("created_at", $this->year)->orderBy("dilihat", "DESC")->limit(4)->get();
+        $beritaSaran = Berita::whereMonth("created_at", $this->month)->whereYear("created_at", $this->year)->orderBy("id", "DESC")->limit(4)->get();
         
-        return view('index', ['beritas' => $beritas, 'beritaBaru' => $this->beritaBaru,  'beritaHot' => $this->beritaHot, 'beritaTerakhir' => $this->beritaTerakhir, 'beritaPopuler' => $this->beritaPopuler, 'beritaSaran' => $beritaSaran,'slides' => $slides, 'banner' => $banner, 'controller' => $this]);
+        return view('index', ['beritas' => $beritas, 'banner' => $banner, 'beritaBaru' => $this->beritaBaru,  'beritaHot' => $this->beritaHot, 'beritaTerakhir' => $this->beritaTerakhir, 'beritaPopuler' => $this->beritaPopuler, 'beritaSaran' => $beritaSaran,'slides' => $slides, 'banner' => $banner, 'controller' => $this]);
 
     }
     
@@ -45,6 +45,8 @@ class MainController extends Controller
         $berita = Berita::where('path', $path)->first();
         $berita->dilihat = $berita->dilihat + 1;
         $berita->save();
+
+        $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
 
         $visitor = new Visitor;
         $visitor->save();
@@ -65,7 +67,7 @@ class MainController extends Controller
 
         $likes    = Like::where('post_id', $berita->id)->get();          
 
-        return view('berita', ['berita' => $berita, 'beritaBaru' => $this->beritaBaru, 'beritaPopuler' => $this->beritaPopuler, 'beritaTerkait' => $beritaTerkait, 'comments' => $comments, 'replies' => $replies, 'likes' => $likes, 'controller' => $this]);
+        return view('berita', ['berita' => $berita, 'banner' => $banner,'beritaTerakhir' => $this->beritaTerakhir, 'beritaBaru' => $this->beritaBaru, 'beritaPopuler' => $this->beritaPopuler, 'beritaTerkait' => $beritaTerkait, 'comments' => $comments, 'replies' => $replies, 'likes' => $likes, 'controller' => $this]);
     }
 
     public function kategoriBerita($cat){
