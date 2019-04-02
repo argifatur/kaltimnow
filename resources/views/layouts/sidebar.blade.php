@@ -25,7 +25,7 @@
 								<div class="post-list-small__img-holder">
 									<div class="thumb-container thumb-75">
 										<a href="berita/{{ $berita->path }}">
-											<img data-src="public/img/{{ $berita->foto }}" src="public/img/{{ $berita->foto }}" alt="" class=" lazyload">
+											<img data-src="{{ asset ('public/img')}}/{{ $berita->foto }}" src="{{ asset ('public/img')}}/{{ $berita->foto }}" alt="" class=" lazyload">
 										</a>
 									</div>
 								</div>

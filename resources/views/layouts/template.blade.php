@@ -164,11 +164,11 @@
 
       	<!-- Socials -->
       	<div class="nav__right-item socials nav__socials d-none d-lg-flex"> 
-      		<a class="social social-facebook social--nobase" href="#" title="facebook" target="_blank" aria-label="facebook">
+      		<a class="social social-facebook social--nobase" href="https://www.facebook.com/dialog/share?app_id=5303202981&display=popup&href=https%3A%2F%2Futamaweb.com%2Fcontact-us%2F&redirect_uri=https%3A%2F%2Fstatic.addtoany.com%2Fmenu%2Fthanks.html%23url%3Dhttps%3A%2F%2Futamaweb.com%2Fcontact-us%2F&quote=" title="facebook" target="_blank" aria-label="facebook">
       			<i class="ui-facebook"></i>
       		</a>
       		
-      		<a class="social social-instagram social--nobase" href="#" title="instagasdram" target="_blank" aria-label="instagram">
+      		<a class="social social-instagram social--nobase" href="https://www.instagram.com/utamaweb/" title="instagasdram" target="_blank" aria-label="instagram">
       			<i class="ui-instagram"></i>
       		</a>
 
@@ -215,7 +215,7 @@
 			<div class="text-center banner" >
 				<a href="#">
 					@foreach($banner as $banner)
-						<img src="public/img/{{ $banner->foto }}" alt="banner">					
+						<img src="{{ asset ('public/img')}}/{{ $banner->foto }}" alt="banner">					
 					@endforeach
 
 					
