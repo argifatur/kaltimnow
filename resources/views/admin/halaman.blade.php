@@ -22,6 +22,7 @@
                 <tr>
                   <th>#</th>
                   <th>Judul</th>
+                  <th>Isi</th>
                   <th>Tanggal Dibuat</th>
                   <th>Tindakan</th>
                 </tr>
@@ -31,6 +32,8 @@
                 <tr>
                   <td><?php echo $halaman->id?></td>
                   <td>{{ $halaman->judul }}</td>
+                  <?php $isi = (strlen($halaman->isi) > 200) ? substr($halaman->isi, 0, 200) . "..." : $halaman->isi; ?>
+                  <td>{!! $isi !!}</td>
                   <td><?php $controller->tanggal($halaman->created_at); ?></td>
                   <td><div class="btn-group">
                     <a href="{{route('edit_halaman', $halaman->id) }}" class="btn btn-primary" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i><br>Ubah</a>
