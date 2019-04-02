@@ -176,7 +176,8 @@
 									<li class="entry__meta-date">									
 										<?php $controller->tanggal($berita->created_at); ?>										
 									</li>
-								</ul>							</div>
+								</ul>							
+							</div>
 								<div class="entry__excerpt">
 									<?php $isi = (strlen($berita->isi) > 200) ? substr($berita->isi, 0, 200) . "..." : $berita->isi; ?>
 									<p>{!! $isi !!} <a href="{{ route('post') }}">Readmore</a></p>
