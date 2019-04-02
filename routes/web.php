@@ -30,17 +30,21 @@ Route::get('/kontak',		  'MainController@kontak')->name('kontak');
 /* -------------- Admin -----------*/
 
 Route::get('/tambah',         'AdminController@tambah')->name('tambah');
+Route::get('/halaman',         'AdminController@halaman')->name('halaman');
 Route::get('/banner',         'AdminController@banner')->name('banner');
 Route::get('/logout',         'AdminController@logout')->name('logout');
 Route::get('/tambah_artik',         'AdminController@tambah_artik')->name('tambah_artik');
 Route::get('/tambah_kat',         'AdminController@tambah_kat')->name('tambah_kat');
 Route::get('/tambah_tag',         'AdminController@tambah_tag')->name('tambah_tag');
 Route::get('/tambah_banner',         'AdminController@tambah_banner')->name('tambah_banner');
+Route::get('/tambah_halaman',         'AdminController@tambah_halaman')->name('tambah_halaman');
 Route::post('/addPost',       'AdminController@addPost')->name('addpost');
 Route::post('/addBanner',       'AdminController@addBanner')->name('addbanner');
+Route::post('/addHalaman',       'AdminController@addHalaman')->name('addhalaman');
 Route::post('/addKat',       'AdminController@addKat')->name('addkat');
 Route::post('/addTag',       'AdminController@addTag')->name('addtag');
 Route::post('/editPost/{id}', 'AdminController@editPost')->name('editpost');
+Route::post('/editHalaman/{id}', 'AdminController@editHalaman')->name('edithalaman');
 Route::post('/editBanner/{id}', 'AdminController@editBanner')->name('editbanner');
 Route::post('/editKat/{id}', 'AdminController@editKat')->name('editkat');
 Route::post('/editTag/{id_tag}', 'AdminController@editTag')->name('edittag');
@@ -50,10 +54,12 @@ Route::get('/daftar_tag',         'AdminController@daftar_tag')->name('daftar_ta
 Route::get('/dasbor',         'AdminController@dasbor')->name('dasbor');
 Route::get('/edit/{id}',      'AdminController@edit')->name('edit');
 Route::get('/edit_banner/{id}',      'AdminController@edit_banner')->name('edit_banner');
+Route::get('/edit_halaman/{id}',      'AdminController@edit_halaman')->name('edit_halaman');
 Route::get('/edit_kat/{id}',      'AdminController@edit_kat')->name('edit_kat');
 Route::get('/edit_tag/{id_tag}',      'AdminController@edit_tag')->name('edit_tag');
 Route::get('/hapus/{id}',	  'AdminController@hapus')->name('hapus');
 Route::get('/hapus_banner/{id}',	  'AdminController@hapus_banner')->name('hapus_banner');
+Route::get('/hapus_halaman/{id}',	  'AdminController@hapus_halaman')->name('hapus_halaman');
 Route::get('/hapus_kat/{id}',	  'AdminController@hapus_kat')->name('hapus_kat');
 Route::get('/hapus_tag/{id_tag}',	  'AdminController@hapus_tag')->name('hapus_tag');
 Route::get('/user',           'AdminController@user')->name('user');

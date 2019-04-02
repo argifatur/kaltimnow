@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Berita;
 use App\Kategori;
 use App\Tag;
+use App\Halaman;
 use App\User; 
 use App\Comment;
 use Auth;
@@ -44,6 +45,10 @@ class AdminController extends Controller
     }
     public function tambah_banner(){
         return view('admin.tambah_banner');
+    }
+
+    public function tambah_halaman(){
+        return view('admin.tambah_halaman');
     }
 
 
@@ -107,6 +112,34 @@ class AdminController extends Controller
 
         $banner->save();
         return redirect("/banner")->with('msg', 'Berhasil Menambahkan Banner!');
+
+    }
+
+    public function addHalaman(Request $request){
+        $halaman = DB::table('halaman')->get();
+
+        $path     = str_replace("?", "", $request->judul);
+        $path     = explode(" ", $path);
+        $path     = implode("-", $path);
+
+        $halaman = new Halaman;
+        $halaman->judul    = $request->judul;
+        $halaman->isi      = $request->isi;
+        $halaman->path     = $path;
+
+        if($request->file('foto') != "") {
+            $file         = $request->file('foto');
+            $fileName     = $file->getClientOriginalName();
+            $dt           = new DateTime();
+            $time         = $dt->format('Y_m_d_H_i_s_');
+            $fileNameNew  = $time.$fileName;
+            $request->file('foto')->move("public/img/", $fileNameNew);
+
+            $halaman->foto = $fileNameNew;
+        } 
+
+        $halaman->save();
+        return redirect("/halaman")->with('msg', 'Berhasil Menambahkan Halaman!');
 
     }
 
@@ -185,6 +218,33 @@ class AdminController extends Controller
 
     }
 
+    public function editHalaman(Request $request, $id){
+
+
+        $path     = str_replace("?", "", $request->judul);
+        $path     = explode(" ", $path);
+        $path     = implode("-", $path);
+
+        $halaman = Halaman::find($id);
+        $halaman->judul    = $request->judul;
+        $halaman->path     = $path;
+
+        if($request->file('foto') != "") {
+            $file         = $request->file('foto');
+            $fileName     = $file->getClientOriginalName();
+            $dt           = new DateTime();
+            $time         = $dt->format('Y_m_d_H_i_s_');
+            $fileNameNew  = $time.$fileName;
+            $request->file('foto')->move("public/img/", $fileNameNew);
+
+            $halaman->foto = $fileNameNew;
+        } else $halaman->foto = $halaman->foto;
+
+        $halaman->save();
+        return redirect("/halaman")->with('msg', 'Berhasil Mengubah Halaman!');
+
+    }
+
     public function editkat(Request $request, $id){
 
 
@@ -231,6 +291,13 @@ class AdminController extends Controller
 
 // mengirim data pegawai ke view tag
         return view('admin.banner',['banner' => $banner]);
+    } 
+
+    public function halaman(){
+        $halaman = DB::table('halaman')->get();
+
+// mengirim data pegawai ke view tag
+        return view('admin.halaman',['halaman' => $halaman, 'controller' => $this]);
     }     
 
     public function daftar_tag(){
@@ -250,6 +317,11 @@ class AdminController extends Controller
     public function edit($id){
         $berita = Berita::find($id);
         return view('admin.edit', ['berita' => $berita]);
+    } 
+
+    public function edit_halaman($id){
+        $halaman = Halaman::find($id);
+        return view('admin.edit_halaman', ['halaman' => $halaman]);
     } 
 
     public function edit_banner($id){
@@ -282,6 +354,14 @@ class AdminController extends Controller
         if ($banner != null) {
             $banner->delete();
             return redirect()->route('banner')->with(['msg'=> 'Berhasil Menghapus Kategori']);
+        }
+    }
+
+    public function hapus_halaman($id){
+        $halaman = Halaman::find($id);
+        if ($halaman != null) {
+            $halaman->delete();
+            return redirect()->route('halaman')->with(['msg'=> 'Berhasil Menghapus Halaman']);
         }
     }
 

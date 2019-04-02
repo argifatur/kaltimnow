@@ -49,6 +49,15 @@
 					<i class="fas fa-fw fa-picture-o text-white"></i>
 				<span class="text-white">Banner Iklan</span></a>
 			</li>
+
+			<li class="nav-item">
+				<a class="nav-link collapsed" href="{{route('halaman')}}">
+					<i class="fas fa-fw fa-picture-o text-white"></i>
+				<span class="text-white">Halaman</span></a>
+			</li>
+
+
+
 				<!-- Nav Item - Pages Collapse Menu -->
 				<li class="nav-item">
 					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -84,8 +93,8 @@
 					</a>
 					<div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 						<div class="bg-white py-2 collapse-inner rounded">
-							<a class="collapse-item" href="{{route('daftar_tag')}}">Semua Tag</a>
-							<a class="collapse-item" href="{{route('tambah_tag')}}">Tambah Baru</a>
+							<a class="collapse-item" href="{{route('daftar_tag') }}">Daftar Tag</a>
+							<a class="collapse-item" href="{{route('tambah_tag')}}">Tambah Tag</a>
 						</div>
 					</div>
 				</li>
