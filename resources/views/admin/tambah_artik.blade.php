@@ -35,18 +35,21 @@
 									<input type="text" class="form-control input-main" name="tag" placeholder="" value="{{ old('tag') }}" required autofocus> 
 								</div> 
 							</div>
+							<div>
+								<br>
+							</div>
 							<div class="form-group"> 
 								<label for="judul_dauroh" name="" class="col-sm-2 control-label">Kategori*</label> 
 								<div class="col-md-12">
-									<div class="col-12 main-cat">
-										<input type="checkbox" name="kategori[]" value="Nasional">Nasional
-										<input type="checkbox" name="kategori[]" value="Edukasi">Edukasi
-										<input type="checkbox" name="kategori[]" value="Ekonomi">Ekonomi
-										<input type="checkbox" name="kategori[]" value="Teknologi">Teknologi
-										<input type="checkbox" name="kategori[]" value="Olahraga">Olahraga
-										<input type="checkbox" name="kategori[]" value="Health">Health
-										<input type="checkbox" name="kategori[]" value="Otomotif">Otomotif
-										<input type="checkbox" name="kategori[]" value="Teknologi">Teknologi
+									<div class="col-12 main-cat ">
+										<input type="checkbox" name="kategori[]" value="Nasional"> Nasional
+										<input type="checkbox" name="kategori[]" value="Edukasi"> Edukasi
+										<input type="checkbox" name="kategori[]" value="Ekonomi"> Ekonomi
+										<input type="checkbox" name="kategori[]" value="Teknologi"> Teknologi
+										<input type="checkbox" name="kategori[]" value="Olahraga"> Olahraga
+										<input type="checkbox" name="kategori[]" value="Health"> Health
+										<input type="checkbox" name="kategori[]" value="Otomotif"> Otomotif
+										<input type="checkbox" name="kategori[]" value="Teknologi"> Teknologi
 									</div>
 								</div> 
 							</div>								
@@ -58,13 +61,13 @@
 								</div> 
 							</div>
 							<div class="form-group"> 
-								<label for="gambar_dauroh" class=" col-sm-2 control-label required">Gambar</label> 
+								<label for="gambar_dauroh" class=" col-sm-2 control-label">Gambar</label> 
 								<div class="col-sm-12">
 									<img id="preview" src="" class="img-responsive" style="margin-bottom: 1rem; max-width: 250px;">
 									<input class="col-8 input-main" type="file" name="foto" placeholder="Gambar" required autofocus>
 								</div> 
 							</div>
-							<input class="col-12 submit-main" type="submit" value="Tambah Artikel">
+							<input class="col-2 submit-main" style="border-radius: 5px" type="submit" value="Tambah Artikel">
 						</form> 
 					</div>
 				</div>

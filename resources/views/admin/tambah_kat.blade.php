@@ -22,7 +22,7 @@
                   <input type="text" class="form-control input-main" name="judul_kategori" placeholder="" value="{{ old('judul_kategori') }}" required autofocus> 
                 </div> 
               </div>
-              <input class="submit-main" type="submit" value="Tambah Kategori">
+              <input class="col-2 submit-main" style="border-radius: 5px" type="submit" value="Tambah Kategori">
             </form> 
           </div>
         </div>
