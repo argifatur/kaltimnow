@@ -227,6 +227,7 @@ class AdminController extends Controller
 
         $halaman = Halaman::find($id);
         $halaman->judul    = $request->judul;
+        $halaman->isi      = $request->isi;
         $halaman->path     = $path;
 
         if($request->file('foto') != "") {
