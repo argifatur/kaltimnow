@@ -111,7 +111,7 @@
 					</button> <!-- end Side menu button -->
 
 					<!-- Mobile logo -->
-					<a href="index.html" class="logo logo--mobile d-lg-none">
+					<a href="{{route('/')}}" class="logo logo--mobile d-lg-none">
 						<img class="logo__img_mobile" src="{{ asset('public/img/logo.png') }}"  alt="logo">
 					</a>
 
@@ -207,7 +207,7 @@
 		<div class="flex-parent align-items-center">
 
 			<!-- Logo -->
-			<a href="index.html" class="logo d-none d-lg-block">
+			<a href="{{route('/')}}" class="logo d-none d-lg-block">
 				<img class="logo__img" src="{{ asset('public/img/logo.png') }}" srcset="{{ asset('public/img/logo.png, img/logo.png') }}" alt="logo">
 			</a>
 
@@ -249,14 +249,14 @@
 							<article class="post-list-small__entry clearfix">
 								<div class="post-list-small__img-holder">
 									<div class="thumb-container thumb-75">
-										<a href="single-post.html">
+										<a href="berita/{{ $berita->path }}">
 											<img data-src="public/img/{{ $berita->foto }}" src="public/img/{{ $berita->foto }}" alt="" class="lazyload">
 										</a>
 									</div>
 								</div>
 								<div class="post-list-small__body">
 									<h3 class="post-list-small__entry-title">
-										<a href="single-post.html">{{ $berita->judul }}</a>
+										<a href="berita/{{ $berita->path }}">{{ $berita->judul }}</a>
 									</h3>
 									<ul class="entry__meta">
 										<li class="entry__meta-date">

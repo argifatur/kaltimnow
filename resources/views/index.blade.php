@@ -16,7 +16,7 @@
 					<ul class="newsticker">
 
 						@foreach ($beritaPopuler as $berita)
-						<li class="newsticker__item"><a href="single-post.html" class="newsticker__item-url">{{ $berita->judul }}</a></li> 
+						<li class="newsticker__item"><a href="berita/{{ $berita->path }}" class="newsticker__item-url">{{ $berita->judul }}</a></li> 
 						@endforeach
 
 					</ul>
@@ -41,16 +41,16 @@
 								<article class="entry featured-posts-grid__entry">
 									<div class="thumb-bg-holder owl-lazy" data-src="public/img/{{ $slide->foto }}">    
 										<img src="img/blog/featured_grid_slide_1.jpg" alt="" class="d-none">
-										<a href="{{ route('post') }}" class="thumb-url"></a>
+										<a href="berita/{{ $slide->path }}" class="thumb-url"></a>
 
 										<div class="bottom-gradient"></div>
 									</div>
 									
 									<div class="thumb-text-holder">
-										<a href="single-post.html" class="entry__meta-category entry__meta-category-color entry__meta-category-color--salad"><?php
+										<a href="/berita/{{ $berita->path }}" class="entry__meta-category entry__meta-category-color entry__meta-category-color--salad"><?php
 										$controller->kategori($slide->kategori); ?></a>   
 										<h2 class="thumb-entry-title">
-											<a href="{{ route('post') }}">{{ $slide->judul }}</a>
+											<a href="berita/{{ $slide->path }}">{{ $slide->judul }}</a>
 										</h2>
 									</div>
 								</article>
@@ -158,7 +158,7 @@
 				<div class="col-md-6">
 					<article class="entry">
 						<div class="entry__img-holder">
-							<a href="single-post.html">
+							<a href="berita/{{ $berita->path }}">
 								<div class="thumb-container thumb-75">
 									<img data-src="public/img/{{ $berita->foto }}" src="public/img/{{ $berita->foto }}" class="entry__img lazyload" alt="" />
 								</div>
@@ -170,7 +170,7 @@
 								<a href="#" class="entry__meta-category"><?php
 								$controller->kategori($berita->kategori); ?></a>
 								<h2 class="entry__title">
-									<a href="">{{ $berita->judul }}</a>
+									<a href="berita/{{ $berita->path }}">{{ $berita->judul }}</a>
 								</h2>
 								<ul class="entry__meta"><i class="ui-date"></i>
 									<li class="entry__meta-date">									
@@ -180,7 +180,7 @@
 							</div>
 								<div class="entry__excerpt">
 									<?php $isi = (strlen($berita->isi) > 200) ? substr($berita->isi, 0, 200) . "..." : $berita->isi; ?>
-									<p>{!! $isi !!} <a href="{{ route('post') }}">Readmore</a></p>
+									<p>{!! $isi !!} <a href="berita/{{ $berita->path }}">Readmore</a></p>
 								</div>
 							</div>
 						</article>
@@ -198,7 +198,7 @@
 				@foreach($beritaHot as $berita)
 				<article class="entry post-list">
 					<div class="entry__img-holder post-list__img-holder">
-						<a href="single-post.html">
+						<a href="berita/{{ $berita->path }}">
 							<div class="thumb-container thumb-75">
 								<img data-src="public/img/{{ $berita->foto }}" src="public/img/{{ $berita->foto }}" class="entry__img lazyload" alt="">
 							</div>
@@ -210,7 +210,7 @@
 							<a href="#" class="entry__meta-category"><?php
 							$controller->kategori($berita->kategori); ?></a>
 							<h2 class="entry__title">
-								<a href="single-post.html">{{$berita->judul}}</a>
+								<a href="berita/{{ $berita->path }}">{{$berita->judul}}</a>
 							</h2>
 							<ul class="entry__meta"><i class="ui-date"></i>
 								<li class="entry__meta-date">									
@@ -245,7 +245,7 @@
 						@foreach($beritaBaru as $berita)
 						<article class="entry">
 							<div class="entry__img-holder">
-								<a href="single-post.html">
+								<a href="berita/{{ $berita->path }}">
 									<div class="thumb-container thumb-75">
 										<img data-src="public/img/{{ $berita->foto }}" src="public/img/{{ $berita->foto }}" class="entry__img owl-lazy" alt="" />
 									</div>
@@ -255,7 +255,7 @@
 							<div class="entry__body">
 								<div class="entry__header">
 									<h2 class="entry__title entry__title--sm">
-										<a href="single-post.html">{{ $berita->judul }}</a>
+										<a href="berita/{{ $berita->path }}">{{ $berita->judul }}</a>
 									</h2>
 									<ul class="entry__meta"><i class="ui-date"></i>
 										<li class="entry__meta-date">									

@@ -4,6 +4,8 @@
     </IfModule>
 
     RewriteEngine On
+    RewriteRule ^(img) - [L]
+
     
 
     # Redirect Trailing Slashes If Not A Folder...
