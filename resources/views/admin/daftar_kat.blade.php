@@ -23,7 +23,7 @@
         </p>
         <table id="example" class="table table-striped table-bordered" style="width:100%">
           <thead>
-            <tr>
+           <tr style="text-align: center;">
               <th>#</th>
               <th>Judul Kategori</th>
               <th>Aksi</th>
@@ -31,18 +31,19 @@
           </thead>
           @foreach ($kategori as $kat)
           <tbody>
-            <tr>
+            <tr style="text-align: center;">
               <td>{{ $kat->id }}</td>
               <td>{{ $kat->judul_kategori }}</td>
-              <td><div class="btn-group-sm">
-                <a class="btn btn-primary" href="{{route('edit_kat', $kat->id) }}"><span class="glyphicon glyphicon-pencil"></span> Ubah</a>
-                <a class="btn btn-danger" href="hapus_kat/{{ $kat->id }}" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"><i class="fa fa-trash"></i>Hapus</a>
+              <td><div class="btn-group">
+                <a href="{{route('edit_kat', $kat->id) }}" class="btn btn-primary" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i><br></a>
+                <a href="hapus_kat/{{ $kat->id }}" class="btn btn-danger" href="" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"><i class="fa fa-trash"></i><br></a>
               </div></td>
+
             </tr>
           </tbody>
           @endforeach
         </table>
-                 {{ $kategori->links() }}
+        {{ $kategori->links() }}
 
       </div>
     </div>

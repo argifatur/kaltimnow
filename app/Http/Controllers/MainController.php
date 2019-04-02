@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Visitor;
 use App\Berita;
 use App\Banner;
+use App\Halaman;
 use App\Comment;
 use App\Like;
 use DateTime;
@@ -111,11 +112,13 @@ public function post(){
 
 public function about(){
    $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
-   return view('about', ['banner' => $banner,'beritaBaru' => $this->beritaBaru, 'beritaTerakhir' => $this->beritaTerakhir,'beritaPopuler' => $this->beritaPopuler,  'controller' => $this]);
+   $halaman   = Halaman::orderBy('id', 'DESC')->limit(1)->get();
+   return view('about', ['banner' => $banner,'halaman' => $halaman, 'beritaBaru' => $this->beritaBaru, 'beritaTerakhir' => $this->beritaTerakhir,'beritaPopuler' => $this->beritaPopuler,  'controller' => $this]);
 }
 
 public function daftarpost(){
    $banner     = Banner::orderBy('id', 'DESC')->limit(1)->get();
+   $berita = Berita::paginate(2);
    return view('daftarpost', ['banner' => $banner, 'beritaBaru' => $this->beritaBaru, 'beritaTerakhir' => $this->beritaTerakhir,'beritaPopuler' => $this->beritaPopuler,  'controller' => $this]);
 }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Berita;
+use App\Banner;
 use App\Kategori;
 use App\Tag;
 use App\Halaman;

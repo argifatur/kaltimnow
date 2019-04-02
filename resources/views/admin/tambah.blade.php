@@ -24,7 +24,7 @@
 			<input type="checkbox" name="kategori[]" value="Otomotif">Otomotif
 		</div>
 		<div class="col-9"><textarea name="isi" id="addPost">{{ old('isi') }}</textarea></div>
-		<input class="col-4 submit-main" type="submit" value="Tambah Artikel">
+		<input class="col-2 submit-main" style="border-radius: 5px" type="submit" value="Tambah Artikel">
 	</form>
 	<script>
 
