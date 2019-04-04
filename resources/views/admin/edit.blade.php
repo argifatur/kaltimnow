@@ -61,7 +61,7 @@
 									<input type="file" name="foto" placeholder="Gambar" >
 								</div> 
 							</div>
-							<input class="col-12 submit-main" type="submit" value="Edit Artikel">
+							<input class="col-2 submit-main" style="border-radius: 5px" type="submit" value="Tambah Banner">
 						</form> 
 					</div>
 				</div>

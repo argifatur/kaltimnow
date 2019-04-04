@@ -33,10 +33,10 @@
 								<label for="gambar_dauroh" class=" col-sm-2 control-label">Gambar</label> 
 								<div class="col-sm-12">
 									<img id="preview" src="" class="img-responsive" style="margin-bottom: 1rem; max-width: 250px;">
-									<input type="file" name="foto" placeholder="Gambar" >
+									<input class="col-8 input-main" type="file" name="foto" placeholder="Gambar" required autofocus>
 								</div> 
 							</div>
-							<input class="col-12 submit-main" type="submit" value="Edit Banner">
+							<input class="col-2 submit-main" style="border-radius: 5px" type="submit" value="Tambah Banner">
 						</form> 
 					</div>
 				</div>

@@ -41,7 +41,7 @@
 									<input type="file" name="foto" placeholder="Gambar" >
 								</div> 
 							</div>
-							<input class="col-12 submit-main" type="submit" value="Edit Halaman	">
+							<input class="col-2 submit-main" style="border-radius: 5px" type="submit" value="Tambah Halaman">
 						</form> 
 					</div>
 				</div>

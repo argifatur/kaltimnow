@@ -35,7 +35,7 @@
 									<input class="col-8 input-main" type="file" name="foto" placeholder="Gambar" required autofocus>
 								</div> 
 							</div>
-							<input class="col-12 submit-main" type="submit" value="Tambah Banner">
+							<input class="col-2 submit-main" style="border-radius: 5px" type="submit" value="Tambah Banner">
 						</form> 
 					</div>
 				</div>

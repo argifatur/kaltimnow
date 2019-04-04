@@ -19,9 +19,9 @@
             </p>
             <table id="example" class="table table-striped table-bordered" style="width:100%">
               <thead>
-                <tr>
+                <tr style="text-align: center;">
                   <th>#</th>
-                  <th>Judul | Kategori</th>
+                  <th>Judul Kategori</th>
                   <th>Isi</th>
                   <th>Tanggal Dibuat</th>
                   <th>Gambar</th>
@@ -30,16 +30,16 @@
               </thead>
               @foreach ($beritas as $berita)
               <tbody>
-                <tr>
+               <tr style="text-align: center;">
                   <td><?php echo $berita->id ?></td>
-                  <td><a href="berita/{{ $berita->path }}" class="col-12 sub-title-news">{{ $berita->judul }} |<?php $controller->kategori($berita->kategori); ?></a></td>
+                  <td><a href="berita/{{ $berita->path }}" class="sub-title-news">{{ $berita->judul }} <hr> <?php $controller->kategori($berita->kategori); ?></a></td>
                   <?php $isi = (strlen($berita->isi) > 200) ? substr($berita->isi, 0, 200) . "..." : $berita->isi; ?>
                   <td>{!! $isi !!}</td>
                   <td><?php $controller->tanggal($berita->created_at); ?></td>
                   <td><img src="public/img/{{ $berita->foto }}" style="height: 170px; width: 170px;" ></td>
                   <td><div class="btn-group">
-                    <a href="{{route('edit', $berita->id) }}" class="btn btn-primary" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i><br>Ubah</a>
-                    <a href="hapus/{{ $berita->id }}" class="btn btn-danger" href="" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"><i class="fa fa-trash"></i><br>Hapus</a>
+                    <a href="{{route('edit', $berita->id) }}" class="btn btn-primary" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                    <a href="hapus/{{ $berita->id }}" class="btn btn-danger" href="" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"><i class="fa fa-trash"></i></a>
                   </div></td>
                 </tr>
               </tbody>
